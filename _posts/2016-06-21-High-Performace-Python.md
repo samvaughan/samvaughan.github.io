@@ -61,7 +61,7 @@ You can also enforce the types of the function and its inputs, turn functions in
 
 MPI (Message Passing Interface) is the standard for distributed, parallel computing. It allows different processes to execute the same program and communicate with each other, sharing data or results. It's best applied to problems which can be easily partitioned. `MPI4py` brings the MPI standards to python.
 
-The key thing which took me a while to get my head around with MPI was that each script __runs the same program__. I was thinking that the master process would have to see different code to all the others, but that's not how it works. To perform our test of taking the sine of each element of a large array, we have to do a few things:
+The key thing which took me a while to get my head around was that each script __runs the same program__. I was thinking that the master process would have to see different code to all the others, but that's not how it works. To perform our test of taking the sine of each element of a large array, we have to do a few things:
 
 * Set up a communicator between different processes
 * Make an array on the master process which we want to do something with
@@ -70,7 +70,7 @@ The key thing which took me a while to get my head around with MPI was that each
 * Do something to that chunk
 * Gather each chunk back and reassemble the array again
 
-A python script which does this can be found here (which borrows lots from ([this][stack_overflow]) stack overflow answer). As you can see, `MPI4py` is far more complicated than using `numpy` or `numba`! The code has to be rewritten rather than editing functions you already have. But the possible gains are bigger, especially if you're running on a cluster, so it might be worth taking the time to use it. 
+A python script which does this can be found [here][github_rep] (which borrows lots from [this][stack_overflow] stack overflow answer). As you can see, `MPI4py` is far more complicated than using `numpy` or `numba`! The code has to be rewritten rather than editing functions you already have, and should be called using `mpiexec -np $n_processes python script_name`, rather than just `python script_name`. But the possible gains are bigger, especially if you're running on a cluster, so it might be worth taking the time to use it. 
 
 Next time- `cython`, `multiprocess` and a comparison of everything on a simple Monte Carlo problem. 
 
@@ -81,3 +81,4 @@ Next time- `cython`, `multiprocess` and a comparison of everything on a simple M
 [numpy]: http://www.numpy.org/
 [numba]: http://numba.pydata.org/
 [stack_overflow]: https://stackoverflow.com/questions/36025188/along-what-axis-does-mpi4py-scatterv-function-split-a-numpy-array/36082684#36082684
+[github_repo]: https://github.com/samvaughan/HPC_post1_June22
