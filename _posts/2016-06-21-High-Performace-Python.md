@@ -70,7 +70,7 @@ The key thing which took me a while to get my head around was that each script _
 * Do something to that chunk
 * Gather each chunk back and reassemble the array again
 
-A python script which does this can be found [here][github_rep] (which borrows lots from [this][stack_overflow] stack overflow answer). As you can see, `MPI4py` is far more complicated than using `numpy` or `numba`! The code has to be rewritten rather than editing functions you already have, and should be called using `mpiexec -np $n_processes python script_name`, rather than just `python script_name`. But the possible gains are bigger, especially if you're running on a cluster, so it might be worth taking the time to use it. 
+A python script which does this can be found [here][github_repo] (which borrows lots from [this][stack_overflow] stack overflow answer). As you can see, `MPI4py` is far more complicated than using `numpy` or `numba`! The code has to be rewritten rather than editing functions you already have, and should be called using `mpiexec -np $n_processes python script_name`, rather than just `python script_name`. But the possible gains are bigger, especially if you're running on a cluster, so it might be worth taking the time to use it. 
 
 Next time- `cython`, `multiprocess` and a comparison of everything on a simple Monte Carlo problem. 
 
