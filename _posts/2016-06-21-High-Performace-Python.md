@@ -1,7 +1,7 @@
 ---
 layout: post
 title:  "High Performance Computing with Python"
-date:   2016-02-27 14:33:11 +0000
+date:   2016-06-22 17:06:11 +0000
 categories: code
 ---
 
