@@ -32,11 +32,11 @@ def numpy_sine(array):
 
 takes just 350 ms! 
 
-Interestingly, I hadn't realised that applying `math.sin` to a single element is _much_ faster than `np.sin`. The speed up happens because we can apply np.sin to the whole array at once. I also hadn't realised that with just a few lines of code, we can do ~5-10 times better than numpy- but that's where `numba` and `cython` come in.
+Interestingly, I hadn't realised that applying `math.sin` to a single element is _much_ faster than `np.sin`- `numpy` functions are only faster when we can apply them to whole arrays at once. I also hadn't realised that with just a few lines of code, we can do ~5-10 times better than numpy- but that's where `numba` and `cython` come in.
 
 ### numba
 
-`numba` ([numba.pydata.org/][numba]) compiles your python functions to give performances similar to C or Fortran. It uses 'Just in Time' compilation, meaning a function is compiled into machine code the first time it's called, just before it's executed. Any further calls to this function now utilise the machine code, rather than interpreting the python syntax again. 
+`numba` ([numba.pydata.org/][numba]) compiles your python functions to give performances similar to C or Fortran. It uses 'Just in Time' compilation, meaning a function is compiled into machine code the first time it's called, just before it's executed. Any further calls to this function now don't need to go via the python interpreter again, making them much quicker. 
 
 It's very easy to add `numba` to your existing code- just import `jit` and then add it as a decorator around a function. 
 
@@ -53,24 +53,22 @@ def numba_sine(array):
 
 This takes around the same time as the `numpy` code above, but we were also shown the example of finding the 'p-norm' of a vector where `numba` outperforms `np.linalg.norm` by a factor of ~10. 
 
-You can also enforce the types of the function and its inputs, turn functions into 'universal functions' which act on arrays (like `numpy` does) and parallelise your code with the addition of a simple 'target="parallel"' to the arguments of the decorator. 
-
-`numba` is still a pretty young package- it's only on version 0.33- but definitely one to watch.
+You can use `numba` to enforce the types of the function and its inputs, turn functions into 'universal functions' which act on arrays (like `numpy` does) and parallelise your code with the addition of a simple 'target="parallel"' to the arguments of the decorator. `numba` is still a pretty young package- it's only on version 0.33- but definitely one to watch.
 
 ### MPI4py
 
-MPI (Message Passing Interface) is the standard for distributed, parallel computing. It allows different processes to execute the same program and communicate with each other, sharing data or results. It's best applied to problems which can be easily partitioned. `MPI4py` brings the MPI standards to python.
+MPI (Message Passing Interface) is the industry standard for distributed, parallel computing. It allows different processes to execute the same program and communicate with each other, sharing data or results between them. `MPI4py` brings the MPI functionality to python.
 
-The key thing which took me a while to get my head around was that each script _runs the same program_. I was thinking that the master process would have to see different code to all the others, but that's not how it works. To perform our test of taking the sine of each element of a large array, we have to do a few things:
+The key thing which took me a while to get my head around was that each script _runs the same program_. I was thinking that the master process would have to see different code to all the others, but that's not how it works- a few well placed `if` statements takes care of that. To perform our test of taking the sine of each element of a large array, we have to do a few things:
 
 * Set up a communicator between different processes
-* Make an array on the master process which we want to do something with
-* Set up the points at which we want to split this array
-* Make the split and send a chunk of the array to each node
-* Do something to that chunk
-* Gather each chunk back and reassemble the array again
+* Make an array on the master process which we want to do something with- our input
+* Set up the points at which we want to split this array at, in order to distribute it between processes
+* Make these splits and send a chunk of the array to each node
+* Have each process do something to that chunk 
+* Gather each sub-array back and reassemble them again
 
-A python script which does this can be found [here][github_repo] (which borrows a lot from [this][stack_overflow] stack overflow answer). As you can see, `MPI4py` is far more complicated than using `numpy` or `numba`! The code has to be rewritten rather than editing functions you already have, and should be called using `mpiexec -np $n_processes python script_name`, rather than just `python script_name`. But the possible gains are bigger, especially if you're running on a cluster, so it might be worth taking the time to use it. 
+A python script which does this for our simple example can be found [here][github_repo] (it borrows a lot from [this][stack_overflow] stack overflow answer). As you can see, `MPI4py` is far more complicated than using either `numpy` or `numba`! The code has to be written with MPI in mind, rather than simply editing functions you already have, and should be called using `mpiexec -np $n_processes python script_name`, rather than just `python script_name`. But the possible gains are bigger, especially if you're running on a cluster of computers, so it might be worth taking the time to use it. 
 
 Next time- `cython`, `multiprocess` and a comparison of everything on a simple Monte Carlo problem. 
 
