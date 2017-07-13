@@ -53,7 +53,7 @@ On the left is an image of an elliptical galaxy called NGC 1277, taken from the 
 
 It turns out that there are other things we can learn about a galaxy's kinematics from its spectrum- the *width* of the absorption lines is also dependent on how the stars are moving. If all the stars are moving more or less together, then the absorption lines we measure will be narrow. If, however, the stellar orbits are more random and jumbled up, the absorption lines will be broader. Measuring this width tells us about something called the velocity 'dispersion' in a galaxy.
 
-Here's a plot of the velocity dispersion in the centre of NGC 1399:
+Here's a plot of the velocity dispersion in the centre of NGC 1399. (Note the scale of the colour bar should be in km/s, and the x and y axes are in pixels when they should be in arcseconds. I'll update with a better plot when I have time!) 
 
 ![Velocity Dispersion map of NGC 1399](https://raw.githubusercontent.com/samvaughan/samvaughan.github.io/master/_posts/Images/Sigma_300.png  "Velocity Dispersion map of NGC 1399")
 
