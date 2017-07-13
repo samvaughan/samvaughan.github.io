@@ -19,11 +19,11 @@ Not quite as impressive! Elliptical galaxies often just look like smears or blob
 
 Incidentally, you may just be able to see a line of blue specks running from bottom to top of the image- this is just an artefact from stitching together a number of separate exposures to make one big image, and isn't a real astronomical phenomenon!
 
-##Galaxies are made of stars
+## Galaxies are made of stars
 
 Stars are the building blocks of galaxies. They are always in motion around the centre of the galaxy they reside in, just like the Earth is always in motion around the Sun. If they weren't, they'd all quickly get pulled together by gravity and end up in the very centre in a big heap. In our own Milky Way galaxy we can track the motion of stars as they move across the sky, but galaxies outside the local group are too far away to make out individual stars, let alone track individual orbits. These galaxies often just appear like smooth patches of light on the sky (like NGC 1399 above). So how do we measure the movements (or "kinematics") of these stars? It turns out we can study the spectra of these objects.
 
-Using an instrument called a spectrograph, we can split up the light we receive from a galaxy (essentially with something like a prism) to make a spectrum. An example of the spectrum from the very centre of NGC 1399 is here:
+Using an instrument called a spectrograph, we can split up the light we receive from a galaxy (essentially with something like a prism) to make a spectrum. An example of a spectrum from my own observations of the very centre of NGC 1399 is here:
 
 ![Optical spectrum of the centre of NGC 1399](https://raw.githubusercontent.com/samvaughan/samvaughan.github.io/master/_posts/Images/NGC1399_Optical_Spectrum.jpg  "NGC 1399 optical spectrum")
 
@@ -32,7 +32,7 @@ Each of those dips is caused by a certain molecule, which absorbs photons in the
 
 Note that this 'redshift' and 'blueshift' is very similar to the *cosmological* redshift that you may have heard of. Cosmological redshifts are caused by the fact that the universe is expanding, meaning that all the galaxies in the sky appear to be moving away from us. Consequently, their entire spectrum is shifted to the red. This is a bulk motion affecting *all* the stars in a certain galaxy. The kinematic resdshift and blueshifts I'm talking about above are local properties *within* a galaxy, caused by its rotation. 
 
-##Mapping these motions
+## Mapping these motions
 
  If we measure these shifts at lots of different points in a galaxy, we can build up a two dimensional image of how the stars are orbiting. 
  
@@ -45,7 +45,7 @@ NGC 1277 Image |  NGC 1277 Velocity Map
 ![NGC 1277](https://raw.githubusercontent.com/samvaughan/samvaughan.github.io/master/_posts/Images/TEST.jpg  "NGC 1277")|    ![A 'Kinematic Map' of the stellar velocities in NGC 1277](https://raw.githubusercontent.com/samvaughan/samvaughan.github.io/master/_posts/Images/NGC1277_SN_15_Vsys.png  "Velocity map of NGC 1277")
 
 
-On the right is a map I've made of the stellar velocities in an elliptical galaxy called NGC 1277. Each pixel corresponds to a spectrum, and the colour of the pixel refers to the shift in that spectrum with respect to the lab values. Blue regions are coming towards us and red regions are moving away. We can see that the stars in NGC 1277 are rotating at around 300 kilometres per second at the largest radii. For reference, the Sun is moving around the centre of the Milky Way at around 220 km/s. 
+On the left is an image of an elliptical galaxy called NGC 1277, taken from the Sloan Digital Sky Survey. On the right is a map I've made of the stellar velocities in this galaxy. Each pixel corresponds to a spectrum, and the colour of the pixel refers to the shift in that spectrum with respect to the lab values. Blue regions are coming towards us and red regions are moving away. We can see that the stars in NGC 1277 are rotating at around 300 kilometres per second at the largest radii. For reference, the Sun is moving around the centre of the Milky Way at around 220 km/s. 
 
 ## Random orbits
 
