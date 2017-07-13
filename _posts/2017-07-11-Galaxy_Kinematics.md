@@ -19,6 +19,7 @@ Not quite as impressive! Elliptical galaxies often just look like smears or blob
 
 Incidentally, you may just be able to see a line of blue specks running from bottom to top of the image- this is just an artefact from stitching together a number of separate exposures to make one big image, and isn't a real astronomical phenomenon!
 
+
 ## Galaxies are made of stars
 
 Stars are the building blocks of galaxies. They are always in motion around the centre of the galaxy they reside in, just like the Earth is always in motion around the Sun. If they weren't, they'd all quickly get pulled together by gravity and end up in the very centre in a big heap. In our own Milky Way galaxy we can track the motion of stars as they move across the sky, but galaxies outside the local group are too far away to make out individual stars, let alone track individual orbits. These galaxies often just appear like smooth patches of light on the sky (like NGC 1399 above). So how do we measure the movements (or "kinematics") of these stars? It turns out we can study the spectra of these objects.
@@ -31,6 +32,7 @@ Using an instrument called a spectrograph, we can split up the light we receive 
 Each of those dips is caused by a certain molecule, which absorbs photons in the atmosphere of the stars in the galaxy. Due to something called the [Doppler effect](https://en.wikipedia.org/wiki/Doppler_effect), if most of the stars in a galaxy are moving towards us then these lines are shifted in wavelength to the 'blue' (i.e shorter wavelengths). If the stars are mostly moving away from us, these lines are shifted to the red (longer wavelengths). Since we know the wavelengths of these absorption lines in the lab here on Earth, we can measure the velocity of the stars in a galaxy by measuring the magnitude of this shift in the absorption lines.
 
 Note that this 'redshift' and 'blueshift' is very similar to the *cosmological* redshift that you may have heard of. Cosmological redshifts are caused by the fact that the universe is expanding, meaning that all the galaxies in the sky appear to be moving away from us. Consequently, their entire spectrum is shifted to the red. This is a bulk motion affecting *all* the stars in a certain galaxy. The kinematic resdshift and blueshifts I'm talking about above are local properties *within* a galaxy, caused by its rotation. 
+
 
 ## Mapping these motions
 
