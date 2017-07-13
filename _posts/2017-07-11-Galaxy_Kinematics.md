@@ -42,7 +42,7 @@ Note that this 'redshift' and 'blueshift' is very similar to the *cosmological* 
 
 NGC 1277 Image |  NGC 1277 Velocity Map
 :-------------------------:|:-------------------------:
-![NGC 1277](/Images/TEST.jpg  "NGC 1277")|    ![A 'Kinematic Map' of the stellar velocities in NGC 1277](/Images/NGC1277_SN_15_Vsys.png  "Velocity map of NGC 1277")
+![NGC 1277](https://github.com/samvaughan/samvaughan.github.io/blob/master/_posts/Images/TEST.jpg  "NGC 1277")|    ![A 'Kinematic Map' of the stellar velocities in NGC 1277](https://github.com/samvaughan/samvaughan.github.io/blob/master/_posts/Images/NGC1277_SN_15_Vsys.png  "Velocity map of NGC 1277")
 
 
 On the right is a map I've made of the stellar velocities in an elliptical galaxy called NGC 1277. Each pixel corresponds to a spectrum, and the colour of the pixel refers to the shift in that spectrum with respect to the lab values. Blue regions are coming towards us and red regions are moving away. We can see that the stars in NGC 1277 are rotating at around 300 kilometres per second at the largest radii. For reference, the Sun is moving around the centre of the Milky Way at around 220 km/s. 
@@ -53,7 +53,7 @@ It turns out that there are other things we can learn about a galaxy's kinematic
 
 Here's a plot of the velocity dispersion in the centre of NGC 1399:
 
-![Velocity Dispersion map of NGC 1399](/Images/Sigma_300.png  "Velocity Dispersion map of NGC 1399")
+![Velocity Dispersion map of NGC 1399](https://github.com/samvaughan/samvaughan.github.io/blob/master/_posts/Images/Sigma_300.png  "Velocity Dispersion map of NGC 1399")
 
 The scale of this map roughly corresponds to the central bright blob in the HST image above. A similar plot of the velocities in this galaxy shows the stars are only rotating at around 30-40 km/s- far less than in NGC 1277.
 
