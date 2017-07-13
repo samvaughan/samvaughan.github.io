@@ -1,14 +1,21 @@
-#A long time ago, in a galaxy far, far away: stellar motions in other galaxies
+
+
+---
+layout: post
+title:  "A long time ago, in a galaxy far, far away: stellar motions in other galaxies"
+date:   2017-07-13 17:06:11 +0000
+categories: science
+---
 
 If you ask people to picture in their head what a galaxy looks like, as long as they don't immediately picture a chocolate bar they'll often think of something like this:
 
-![M101: a beautiful grand design spiral galaxy](_posts/Images/M101_hires_STScI-PRC2006-10a.jpg  "M101")
+![M101: a beautiful grand design spiral galaxy](/Images/M101_hires_STScI-PRC2006-10a.jpg  "M101")
 
 This is an image of M101, the 'Pinwheel galaxy', taken with the Hubble Space Telescope (HST). The blue colour in the spiral arms comes from clumps of young stars being formed there, whilst the redder, central region is probably harbouring a supermassive black hole. Although spiral galaxies are undoubtedly very interesting objects, the galaxies that I work with tend to look a little bit different. 
 
 Below is an HST image of NGC 1399, an elliptical galaxy I've studied in some detail:
 
-![NGC 1399: a nearby elliptical galaxy](_posts/Images/NGC_1399_HST.png  "NGC 1399")
+![NGC 1399: a nearby elliptical galaxy](/Images/NGC_1399_HST.png  "NGC 1399")
 
 Not quite as impressive! Elliptical galaxies often just look like smears or blobs, without any of the impressive structure you see in spiral galaxies. You typically don't see any young, blue regions which implies that ellipticals form stars at a lower rate than spirals do. 
 
@@ -20,7 +27,7 @@ Stars are the building blocks of galaxies. They are always in motion around the 
 
 Using an instrument called a spectrograph, we can split up the light we receive from a galaxy (essentially with something like a prism) to make a spectrum. An example of the spectrum from the very centre of NGC 1399 is here:
 
-![Optical spectrum of the centre of NGC 1399](_posts/Images/NGC1399_Optical_Spectrum.jpg  "NGC 1399 optical spectrum")
+![Optical spectrum of the centre of NGC 1399](/Images/NGC1399_Optical_Spectrum.jpg  "NGC 1399 optical spectrum")
 
 
 Each of those dips is caused by a certain molecule, which absorbs photons in the atmosphere of the stars in the galaxy. Due to something called the [Doppler effect](https://en.wikipedia.org/wiki/Doppler_effect), if most of the stars in a galaxy are moving towards us then these lines are shifted in wavelength to the 'blue' (i.e shorter wavelengths). If the stars are mostly moving away from us, these lines are shifted to the red (longer wavelengths). Since we know the wavelengths of these absorption lines in the lab here on Earth, we can measure the velocity of the stars in a galaxy by measuring the magnitude of this shift in the absorption lines.
@@ -37,7 +44,7 @@ Note that this 'redshift' and 'blueshift' is very similar to the *cosmological* 
 
 NGC 1277 Image |  NGC 1277 Velocity Map
 :-------------------------:|:-------------------------:
-![NGC 1277](_posts/Images/TEST.jpg  "NGC 1277")|    ![A 'Kinematic Map' of the stellar velocities in NGC 1277](_posts/Images/NGC1277_SN_15_Vsys.png  "Velocity map of NGC 1277")
+![NGC 1277](/Images/TEST.jpg  "NGC 1277")|    ![A 'Kinematic Map' of the stellar velocities in NGC 1277](/Images/NGC1277_SN_15_Vsys.png  "Velocity map of NGC 1277")
 
 
 On the right is a map I've made of the stellar velocities in an elliptical galaxy called NGC 1277. Each pixel corresponds to a spectrum, and the colour of the pixel refers to the shift in that spectrum with respect to the lab values. Blue regions are coming towards us and red regions are moving away. We can see that the stars in NGC 1277 are rotating at around 300 kilometres per second at the largest radii. For reference, the Sun is moving around the centre of the Milky Way at around 220 km/s. 
@@ -48,7 +55,7 @@ It turns out that there are other things we can learn about a galaxy's kinematic
 
 Here's a plot of the velocity dispersion in the centre of NGC 1399:
 
-![Velocity Dispersion map of NGC 1399](_posts/Images/Sigma_300.png  "Velocity Dispersion map of NGC 1399")
+![Velocity Dispersion map of NGC 1399](/Images/Sigma_300.png  "Velocity Dispersion map of NGC 1399")
 
 The scale of this map roughly corresponds to the central bright blob in the HST image above. A similar plot of the velocities in this galaxy shows the stars are only rotating at around 30-40 km/s- far less than in NGC 1277.
 
