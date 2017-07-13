@@ -1,5 +1,3 @@
-
-
 ---
 layout: post
 title:  "A long time ago, in a galaxy far, far away: stellar motions in other galaxies"
