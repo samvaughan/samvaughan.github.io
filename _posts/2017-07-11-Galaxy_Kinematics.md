@@ -1,4 +1,11 @@
-#A long time ago, in a galaxy far, far away: stellar motions in other galaxies
+---
+layout: post
+title:  "A long time ago, in a galaxy far, far away: stellar motions in other galaxies"
+date:   2017-07-13 17:06:11 +0000
+categories: science
+---
+
+
 
 If you ask people to picture in their head what a galaxy looks like, as long as they don't immediately picture a chocolate bar they'll often think of something like this:
 
