@@ -9,7 +9,7 @@ I'd like to learn how to use the `pandas` package [](http://pandas.pydata.org/) 
 
 I chose the data on airline routes and airports, from [here](https://www.kaggle.com/open-flights/flight-route-database) and [here](https://www.kaggle.com/open-flights/airports-train-stations-and-ferry-terminals), thinking that I'd join these two datasets together and plot a map of flight routes around the world. 
 
-The airports dataset has the longitude and latitude of ~8000 airports around the world. Each airport also has a unique id, which is referenced in the flight routes data. I'd need to join the tables together, so instead of columns named `source airport id`, we'd have `source airport longitude` and `source airport latitude` instead. This is easily done with pandas, but it took me a little while to get my head around. 
+The airports dataset has the longitude and latitude of ~8000 airports around the world. Each airport also has a unique id, which is referenced in the flight routes data. I'd need to join the tables together, so instead of columns named `"source airport id"`, we'd have `"source airport longitude"` and `"source airport latitude"` instead. This is easily done with pandas, but it took me a little while to get my head around how it works. 
 
 First we load everything in
 
@@ -88,7 +88,7 @@ plt.show()
 ```
 Here, the "Geodetic" transformation ensures that our lines between two coordinates follow the curvature of the Earth (as real flight plans do). The final plot looks like this:
 
-![](flight_map.pdf)
+![](https://raw.githubusercontent.com/samvaughan/samvaughan.github.io/master/_posts/Images/flight_map.pdf)
 
 Which looks okay! I'd like to go back and play with things a bit- like use a nicer map image, and maybe colour the flights based on length or duration somehow. It also takes around a minute to run on my laptop, with the geodesic transformation for the line collection taking up most of that time. So maybe there's a more efficient way?
 
