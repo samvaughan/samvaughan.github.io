@@ -88,7 +88,7 @@ plt.show()
 ```
 Here, the "Geodetic" transformation ensures that our lines between two coordinates follow the curvature of the Earth (as real flight plans do). The final plot looks like this:
 
-![](https://raw.githubusercontent.com/samvaughan/samvaughan.github.io/master/_posts/Images/flight_map.jpg)
+![](https://raw.githubusercontent.com/samvaughan/samvaughan.github.io/master/_posts/Images/flight_paths.jpg)
 
 Which looks okay! I'd like to go back and play with things a bit- like use a nicer map image, and maybe colour the flights based on length or duration somehow. It also takes around a minute to run on my laptop, with the geodesic transformation for the line collection taking up most of that time. So maybe there's a more efficient way?
 
