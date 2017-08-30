@@ -33,11 +33,11 @@ routes=pd.read_csv('routes.csv')
 
 Now we make sure that the id columns in both these series are actualy numerical data. I was tearing my hair out trying to match one against the other before realising that one id column was all `strings` and the other all `ints`!
 
-'''python
+```python
 #Make series of just the ids, and convert them to floats
 tmp_sources=pd.DataFrame(pd.to_numeric(routes[' source airport id'], errors='coerce'))
 tmp_dests=pd.DataFrame(pd.to_numeric(routes[' destination airport id'], errors='coerce'))
-'''
+```
 
 Setting `errors='coerce'` makes sure that any incorrect values are set to Nans, rather than throwing an error
 
