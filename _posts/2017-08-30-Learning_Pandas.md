@@ -11,7 +11,7 @@ I chose the data on airline routes and airports, from [here](https://www.kaggle.
 
 The airports dataset has the longitude and latitude of ~8000 airports around the world. Each airport also has a unique id, which is referenced in the flight routes data. I'd need to join the tables together, so instead of columns named `"source airport id"`, we'd have `"source airport longitude"` and `"source airport latitude"` instead. This is easily done with pandas, but it took me a little while to get my head around how it works. 
 
-First we load everything in
+First we load everything in:
 
 ```python
 #import things
@@ -39,7 +39,7 @@ tmp_sources=pd.DataFrame(pd.to_numeric(routes[' source airport id'], errors='coe
 tmp_dests=pd.DataFrame(pd.to_numeric(routes[' destination airport id'], errors='coerce'))
 ```
 
-Setting `errors='coerce'` makes sure that any incorrect values are set to Nans, rather than throwing an error
+Setting `errors='coerce'` makes sure that any incorrect values are set to Nans, rather than throwing an error.
 
 ```python
 #Get just the longitude and latitude columns
@@ -69,7 +69,7 @@ ax.coastlines(resolution='10m')
 ax.stock_img()
 ```
 
-To plot my actual flight routes, I'd need to use a `line_collection`. Going through and plotting the ~68000 routes one by one in a for loop would take forever!
+To plot my actual flight routes, I'd need to use a `LineCollection`. Going through and plotting the ~68000 routes one by one in a for loop would take forever!
 
 ```python
 #Get just the columns we want from our final dataframe
