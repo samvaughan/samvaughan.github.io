@@ -1,4 +1,9 @@
-    let svg = d3.select("div#example").selectAll("svg"),
+    let svg = d3.select("div#example")
+        .append("svg")
+        .attr("width", 500)
+        .attr("height", 350);
+
+
     margin = {top: 20, right: 20, bottom: 30, left: 50},
     width = +svg.attr("width") - margin.left - margin.right,
     height = +svg.attr("height") - margin.top - margin.bottom;
