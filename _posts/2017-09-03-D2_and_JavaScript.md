@@ -24,7 +24,7 @@ let points = d3.range(1, 10).map(function(i) {
     };
 });
 
-    let d3.select("div#example").selectAll("svg"),
+    let d3.select("div#example").selectAll("svg");
         margin = {top: 20, right: 20, bottom: 30, left: 50},
         width = 500 - margin.left - margin.right,
         height = 350 - margin.top - margin.bottom;
