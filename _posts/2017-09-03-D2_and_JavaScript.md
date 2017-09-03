@@ -14,10 +14,14 @@ Test
 
 
 
-let svg = d3.select("div#example").selectAll("svg"),
-    margin = {top: 20, right: 20, bottom: 30, left: 50},
+let margin = {top: 20, right: 20, bottom: 30, left: 50},
     width = 500 - margin.left - margin.right,
     height = 350 - margin.top - margin.bottom;
+    
+let svg = d3.select("div#example").selectAll("svg")
+   .append("svg")
+   .attr("width", w)
+   .attr("height", h);
 
 let m=3.0, c=15.0;
 let points = d3.range(1, 10).map(function(i) {
