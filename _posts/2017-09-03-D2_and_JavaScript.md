@@ -23,8 +23,8 @@ let margin = {top: 20, right: 20, bottom: 30, left: 50},
     
 let svg = d3.select("div#example")
    .append("svg")
-   .attr("width", width)
-   .attr("height", height);
+   .attr("width", 500)
+   .attr("height", 350);
 
 let m=3.0, c=15.0;
 let points = d3.range(1, 10).map(function(i) {
