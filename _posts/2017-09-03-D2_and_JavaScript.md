@@ -7,6 +7,9 @@ categories: code
 
 Test
 
+<div id="example"></div>
+
+
 <script src="http://d3js.org/d3.v4.min.js"> </script>
 
 <script>
@@ -122,7 +125,7 @@ function dragended(d) {
 
 </script>
 
-<div id="example"></div>
+
 
 
 Test
