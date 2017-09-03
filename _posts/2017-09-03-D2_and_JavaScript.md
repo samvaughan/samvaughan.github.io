@@ -12,6 +12,13 @@ Test
 <script>
 
 
+
+
+let svg = d3.select("div#example").selectAll("svg"),
+    margin = {top: 20, right: 20, bottom: 30, left: 50},
+    width = 500 - margin.left - margin.right,
+    height = 350 - margin.top - margin.bottom;
+
 let m=3.0, c=15.0;
 let points = d3.range(1, 10).map(function(i) {
     let x_val=i * width / 10;
@@ -23,12 +30,6 @@ let points = d3.range(1, 10).map(function(i) {
 
     };
 });
-
-    let svg = d3.select("div#example").selectAll("svg"),
-        margin = {top: 20, right: 20, bottom: 30, left: 50},
-        width = 500 - margin.left - margin.right,
-        height = 350 - margin.top - margin.bottom;
-
 
 let x = d3.scaleLinear()
     .rangeRound([0, width]);
