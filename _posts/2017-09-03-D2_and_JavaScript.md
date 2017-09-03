@@ -16,9 +16,13 @@ stack overflow question/answer, and is also available on my github account [here
 <div id="example"></div>
 
 
-<script src="http://d3js.org/d3.v4.min.js"> </script>
+<script src="http://d3js.org/d3.v4.min.js"> 
 
-<script src="https://rawgit.com/samvaughan/samvaughan.github.io/master/_posts/JS/drag_points.js"></script>
+</script>
+
+<script src="https://rawgit.com/samvaughan/samvaughan.github.io/master/_posts/JS/drag_points.js">
+
+</script>
 
 
 
