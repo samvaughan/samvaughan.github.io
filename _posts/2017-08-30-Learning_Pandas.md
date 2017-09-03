@@ -1,4 +1,4 @@
----
+``---
 layout: post
 title:  "Learning Pandas- plotting flight paths"
 date:   2017-08-30 20:32:11 +0000
@@ -52,7 +52,7 @@ destinations=pd.merge(tmp_dests, locations, left_on=' destination airport id', r
 #join these together, to get a table with lons and lats for the airport sources and destinations 
 final=sources.join(destinations, lsuffix='_source', rsuffix='_dest') 
 ```
-The merge and join here are the really useful parts of pandas. The two accomplish very similar things, but are subtley different- and I can't say I'm entirely sure when one is more approriate than the other! Something on the list of things to learn. Now our new dataframe `Final` has columns like `lat_source`, `lon_source`, `lon_dest` and `lat_dest`, and the next thing to do is to plot them all on a map.
+The merge and join functions here are the really useful parts of pandas. The two accomplish very similar things, but are subtley different- and I can't say I'm entirely sure when one is more approriate than the other! Something on the list of things to learn. Now our new dataframe `Final` has columns like `lat_source`, `lon_source`, `lon_dest` and `lat_dest`, and the next thing to do is to plot them all on a map.
 
 I did this using the useful package [Cartopy](http://scitools.org.uk/cartopy/). You can simply load up a matplotlib axis with the appropriate map projection and plot things in longitude and latitude on there!
 
