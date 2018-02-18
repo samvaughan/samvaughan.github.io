@@ -7,7 +7,7 @@ categories: code
 
 I recently bought the excellent book [Hand-On Machine Learning with SciKitLearn and TensorFlow](https://www.amazon.co.uk/Hands-Machine-Learning-Scikit-Learn-TensorFlow/dp/1491962291) and decided to write my own simple neural network in python and numpy. Another really clear tutorial I've found is the online book by Michael Nielson, available [here](http://neuralnetworksanddeeplearning.com/). Lots of my code is based heavily on his example!
 
-##Neural Networks
+## Neural Networks
 
 So what is a Neural Network? At their core, neural networks are simple a collection of 'neurons'. These neurons are little blocks of linear algebra operators which take a number of inputs and give you back an output. If we take the simple case of just having one neuron, things look deceptively simple! 
 
@@ -21,7 +21,7 @@ Now, an artificial neuron takes the two inputs ("Sunny?" and "Anyone else playin
 
 The key to neural networks is to think about things the other way around. Instead of knowing the weights and biases to start with, we know the outcomes- for example, we could keep a log of the weather and number of other players every day for a year, as well as the number of times you played football. We'd then *train* the neuron on all of the data by fiddling with the values of the weights and biases until it was able to reproduce the historical outcomes with the inputs- and then use these 'best guess' weights and biases to predict whether or not you're going to play football tomorrow!
 
-##Implementation
+## Implementation
 
 Things are obviously a bit more complicated than this in reality, of course. We can't use a simple 'step' function for the neuron's output (either 1 or 0), because way we train a network requires that a tiny change we make to the weights and biases leads to tiny changes in the output. With a step function, it's not possible to make a small change- it's all or nothing! We instead use functions which behave a bit like the step function, but still have smooth behaviour- for example a [sigmoid function](https://en.wikipedia.org/wiki/Sigmoid_function) or a a general class called 'Rectified Linear Units' ([ReLUs](https://en.wikipedia.org/wiki/Rectifier_(neural_networks))). 
 
@@ -30,7 +30,7 @@ When we have many neurons acting together, the simple weights and bias numbers b
 
 ![](https://rawgit.com/samvaughan/samvaughan.github.io/master/_posts/Images/neural_network_example.png)
 
-##Digit Classification
+## Digit Classification
 
 A classic place to learn and practice with neural networks is the [MNIST dataset](http://yann.lecun.com/exdb/mnist/). This is a collection of 60,000 hand written digits from 0-9, packaged as a 28 pixel by 28 pixel image and a label of the correct answer for that image. Michael Nielson talks you through building a neural network in python with 28*28=784 inputs (one per pixel), one 'hidden' layer of neurons to do the thinking and 10 outputs (which will be the probability that the input digit is a 0, 1, 2, etc.)
 
@@ -39,7 +39,7 @@ The key to the whole process is the 'backpropogation' algorithm, which takes the
 When I tested it, the neural network gets the classification of an unseen set of handwritten digits correct 95% of the time! I tried it out myself by sketching a quick number 6 in paint, then downscaling the image to be 28x28 pixels and running it through the code- and it was correct! The network takes a while to run through all of the training data (around a few minutes), but once you've worked out the best weights and biases, classifying a new digit takes no time at all. The whole code is available on github, [here](https://github.com/samvaughan/MachineLearning_MNIST). 
 
 
-###TensorFlow
+### TensorFlow
 
 Of course, hard coded for loops aren't great for extending this network to more layers, or choosing a different optimisation method. For doing real machine learning problems, you'll need something like [TensorFlow](https://www.tensorflow.org/). I wrote a similar network using the tensorflow tools (with more neurons and some extra bells and whistles), which you can also find on [github](https://github.com/samvaughan/MachineLearning_MNIST)- this one gets to around 98% successful classification rate. 
 
