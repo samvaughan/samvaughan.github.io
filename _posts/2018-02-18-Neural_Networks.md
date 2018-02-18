@@ -36,12 +36,20 @@ A classic place to learn and practice with neural networks is the [MNIST dataset
 
 The key to the whole process is the 'backpropogation' algorithm, which takes the difference between the network's prediction and the actual label, then propagates these errors backwards in order to adjust the weights and biases. His code uses a neat for loop for this, but I couldn't quite get my head around it until I'd written it out simply and without the loop. 
 
-When I tested it, the neural network gets the classification of an unseen set of handwritten digits correct 95% of the time! I tried it out myself by sketching a quick number 6 in paint, then downscaling the image to be 28x28 pixels and running it through the code- and it was correct! The network takes a while to run through all of the training data (around a few minutes), but once you've worked out the best weights and biases, classifying a new digit takes no time at all. The whole code is available on github, [here](https://github.com/samvaughan/MachineLearning_MNIST). 
+When I tested it, the neural network gets the classification of an unseen set of handwritten digits correct 95% of the time! I tried it out myself by sketching a quick number 9 in paint, then downscaling the image to be 28x28 pixels and running it through the code- and it was correct! Even though I've written the code myself, it still feels a bit like black magic...
+
+The network takes a while to run through all of the training data (around 10 minutes), but once you've worked out the best weights and biases, classifying a new digit takes no time at all. The whole code is available on github, [here](https://github.com/samvaughan/MachineLearning_MNIST). 
 
 
 ### TensorFlow
 
 Of course, hard coded for loops aren't great for extending this network to more layers, or choosing a different optimisation method. For doing real machine learning problems, you'll need something like [TensorFlow](https://www.tensorflow.org/). I wrote a similar network using the tensorflow tools (with more neurons and some extra bells and whistles), which you can also find on [github](https://github.com/samvaughan/MachineLearning_MNIST)- this one gets to around 98% successful classification rate. 
+
+TensorFlow also has some very nice options for analysing your network's performance. Here is a screenshot of the accuracy of my network, with each run corresponding to different tweaks of the various hyperparameters (e.g the type of optimizer, the dropout probability, etc).
+
+![](https://rawgit.com/samvaughan/samvaughan.github.io/master/_posts/Images/neural_net_accuracy.png)
+
+The green run uses the 'Adam' optimiser, but I'd set the learning rate at too large a value- it's interesting how these choices can make a good 3-4% difference on the outcomes!
 
 The best networks can reach >99% accuracy (such as, for example,  [this one](https://www.kaggle.com/yassineghouzam/introduction-to-cnn-keras-0-997-top-6)). They do this using a number of different techniques, such as augmenting the training data (by e.g rotating or zooming the numbers slightly, to build a larger training set) and/or applying 'convolutional neural networks' which can apply learnable filters to the images beforehand. 
 
