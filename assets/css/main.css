@@ -8419,3 +8419,15 @@
 			#wrapper.divided > .invert:first-child {
 				box-shadow: none !important;
 			}
+
+
+/*Added by me*/
+
+
+.myImage img {
+
+width: 80%;
+
+max-width: 800px;
+
+}
