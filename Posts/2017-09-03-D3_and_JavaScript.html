@@ -1,22 +1,62 @@
-<!DOCTYPE HTML>
-<!--
-  Story by HTML5 UP
-  html5up.net | @ajlkn
-  Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
--->
-<html>
-  <head>
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Sam Vaughan">
     <title>Sam Vaughan</title>
-    <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <link rel="stylesheet" href="../assets/css/main.css" />
-  </head>
-  <body>
-<section class="wrapper style1 align-left">
-<div class="inner">
+    
+    <link rel="stylesheet" href="https://unpkg.com/purecss@1.0.0/build/pure-min.css" integrity="sha384-" crossorigin="anonymous">
+    <link rel="stylesheet" href="js/highlight_js_styles/github-gist.css">
+    <script src="js/highlight.pack.js"></script>
+    <script>hljs.initHighlightingOnLoad();</script>
+    
+    
+    
+    
+        <!--[if lte IE 8]>
+            <link rel="stylesheet" href="css/layouts/side-menu-old-ie.css">
+        <![endif]-->
+        <!--[if gt IE 8]><!-->
+            <link rel="stylesheet" href="css/layouts/side-menu.css">
+        <!--<![endif]-->
+</head>
 
-<h1>D3 and Javascript</h1>
-<h4>2017-09-03</h4>
+
+<div id="layout">
+    <!-- Menu toggle -->
+    <a href="#menu" id="menuLink" class="menu-link">
+        <!-- Hamburger icon -->
+        <span></span>
+    </a>
+
+    <div id="menu">
+        <div class="pure-menu">
+            <a class="pure-menu-heading" href="#">Sam Vaughan</a>
+
+            <ul class="pure-menu-list">
+                <li class="pure-menu-item"><a href="../index.html" class="pure-menu-link">Home</a></li>
+                <li class="pure-menu-item"><a href="../posts.html" class="pure-menu-link">Blog</a></li>
+
+            </ul>
+        </div>
+    </div>
+
+    <div id="main">
+        <div class="header">
+          <h1>D3 and Javascript</h1>
+          <h4>2017-09-03</h4>
+        </div>
+
+
+
+
+
+
+
+        <div class="content">
+
+
 <p>I was inspired by some of the really impressive visualisations <a href="https://bl.ocks.org/mbostock">here</a> to dive in and 
 learn some javascript and D3! I found <a href="http://chimera.labs.oreilly.com/books/1230000000345/ch01.html">this</a> excellent book by Scott Murray to be really informative and useful (although written for a previous version of D3- there's an updated edition of
  the book, but I don't think it's open access). </p>
@@ -30,14 +70,25 @@ stack overflow question/answer, and is also available on my github account <a hr
 <script src="JS/drag_points.js">
 </script>
 
-<p>Getting it embedded in the Jekyll markdown this site uses was also a bit challenging- but <a href="https://stackoverflow.com/questions/22651346/how-to-embed-a-d3-js-example-to-the-jekyll-blog-post">this</a> 
+<p>
+  Getting it embedded in the Jekyll markdown this site uses was also a bit challenging- but <a href="https://stackoverflow.com/questions/22651346/how-to-embed-a-d3-js-example-to-the-jekyll-blog-post">this</a> 
 stack overflow answer was very helpful. I went with the second method they mention- making a <code>&lt;div&gt;</code> tag and creating an
 SVG element inside that. </p>
 <p>There's already lots of things I'd like to apply D3 to- so watch this space! </p>
 
 
 
+
+
+        </div>
+    </div>
 </div>
+
+
+
+
+<script src="js/ui.js"></script>
+
 <!-- Scripts -->
 <script src="../assets/js/jquery.min.js"></script>
 <script src="../assets/js/jquery.scrollex.min.js"></script>
