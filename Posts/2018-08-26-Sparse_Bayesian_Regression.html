@@ -58,23 +58,23 @@
 
 
 
-<p>I've been reading the excellent blog by <a href='https://betanalpha.github.io/'>Michael Betancourt</a>, who's an applied statistician (and ex-physicist), for a while. He works on Hamiltonian Monte Carlo and its applications to statistical modelling problems, primarily through the language Stan. Whilst reading through his website, I thought it'd be a useful way to get more acquainted with PyMC3 (a python statistical modelling package which is vaguely similar to Stan) by translating some of his case studies to Python. The following is my attempt at performing "Sparse Bayesian Regression", which is very important when you have a large number of variables and you're not sure which ones are important! You can read Michael's original blog, on which the following is based, <a href='https://betanalpha.github.io/assets/case_studies/bayes_sparse_regression.html'>here</a>.</p>
+<p>I've been reading the excellent blog by <a href='https://betanalpha.github.io/'>Michael Betancourt</a>, who's an applied statistician (and ex-physicist), for a while. He works on Hamiltonian Monte Carlo and its applications to statistical modelling problems, primarily through the language Stan. Whilst reading through his website, I thought it'd be a useful way to get more acquainted with PyMC3 (a python statistical modelling package which is similar to Stan) by translating some of his case studies to Python. The following is my attempt at performing "Sparse Bayesian Regression", which is very important when you have a large number of variables and you're not sure which ones are important. You can read Michael's original blog, on which the following is based, <a href='https://betanalpha.github.io/assets/case_studies/bayes_sparse_regression.html'>here</a>.</p>
 
 <h2 class="content-subhead">Sparse Bayesian Regression</h2>
 
-<p>Linear regression problems have you try and predict the value of some variable, $y$, based on one or a number of input variables, $X$. $X$ may be a single vector of $N$ numbers or an $M\times N$ matrix, where we have $M$ variables with $N$ observations of each one. </p>
+<p>Linear regression problems involve trying to predict the value of some variable, $y$, based on one or a number of input variables, $X$. $X$ may be a single vector of $N$ numbers or an $M\times N$ matrix, where we have $M$ variables with $N$ observations of each one. </p>
 
-<p>Put another way, let's say we want to make a model to predict the life expectancy of people in the UK (our $y$). Our inputs could be things like income, postcode and amount of exercise each person does a week. If we had 100 people in our model, our $X$ would then be a matrix of shape $3\times 100$. We might then (very simply) model the relationship between our input variables and our output variable as a <em>linear</em> one, such that we could write
+<p>Put another way, let's say we want to make a model to predict the life expectancy of people in the UK (our $y$ variable). Our inputs could be things like income, postcode and amount of exercise each person does a week. If we had 100 people's data in our model, our $X$ would then be a matrix of shape $3\times 100$. We might then (very simply) model the relationship between our input variables and our output variable as a <em>linear</em> one, such that we could write
 
     $$y \sim m \cdot X +c + \epsilon, 
     \\
     \epsilon\sim\mathrm{Normal}(0, \sigma^2)$$
 
-with $\epsilon$ some "intrinsic scatter" and $m$ and $c$ some unknown numbers which we could find (by Maximum Likelihood methods or by sampling from the posterior using something like PyMC3 or <a href='https://emcee.readthedocs.io/en/stable/'>emcee</a>). </p>
+with $\epsilon$ some "intrinsic scatter" in the relation and $m$ and $c$ some unknown numbers which we could find (by Maximum Likelihood methods or by sampling from the posterior using something like PyMC3 or <a href='https://emcee.readthedocs.io/en/stable/'>emcee</a>). </p>
 
-<p>This is fine when we know exactly what our input data is going to be. But what about when we have lots of things which <em>might</em> play a role in our model? Presumably we have more data than just the three variables I mentioned before. Why do we exclude things like "number of pairs of socks owned" or "distance from each person's house to the nearest cinema"? Whilst it's (very)unlikely that these parameters would have a large effect on a person's life expectancy, wouldn't it be nice for the data to tell us that itself? </p>
+<p>This is fine when we know exactly what our input data ($X$) should going to be. But what about when we have lots of things which <em>might</em> play a role in our model? Presumably we have more data than just the three variables I mentioned before. Why do we exclude things like "number of pairs of socks owned" or "distance from each person's house to the nearest cinema"? Whilst it's (very) unlikely that these parameters would have a large effect on a person's life expectancy, wouldn't it be nice for the data to tell us that itself? </p>
 
-<p>This is where <em>sparse</em> methods come in. Sparsity is the assumption that although we may have lots of variables, we think that only a few should contribute to our final model. In frequentist statistics, regularisation methods like <a href='https://en.wikipedia.org/wiki/Lasso_(statistics)'>LASSO regression</a> try and penalise large values of the gradient terms in our model (the $m$s from before) such that only a few of them (the most important ones) end up in our final model, and most of the others are forced to be very small. I hadn't realised that transferring across these techniques to Bayesian statistics wasn't completely straightforward, but Micheal's <a href=https://betanalpha.github.io/assets/case_studies/bayes_sparse_regression.html">blog post</a> on the topic summarises the issues nicely. </p>
+<p>This is where <em>sparse</em> methods come in. Sparsity is the assumption that although we may have lots of variables, we think that only a few should contribute to our final model. In frequentist statistics, methods like <a href='https://en.wikipedia.org/wiki/Lasso_(statistics)'>LASSO regression</a> try and penalise large values of the gradient terms in our model (the $m$s from before) such that only a few of them (the most important ones) end up in our final model, and most of the others are forced to be very small. This process is known as regularisation. I hadn't realised that transferring across these techniques to Bayesian statistics wasn't completely straightforward, but Micheal's <a href=https://betanalpha.github.io/assets/case_studies/bayes_sparse_regression.html>case study</a> on the topic summarises the issues nicely. </p>
 
 <p>
 Essentially, applying a simple penalty to the likelihood function using a prior of the form 
@@ -84,7 +84,7 @@ $$\mathcal{L}\sim\sum_{i=0}^{N}\lambda_{i}m_{i}$$
 as in LASSO will fail because this was designed for frequentist <em>point</em> estimates. In Bayesian methods, we care about the whole distribution of values each $m_i$ can take- and so values of the posterior below the regularisation scale $\lambda_i$ will be driven to zero but values above it will be left alone. This tug-of-war on each end of our posterior isn't what we want at all, and leads to biased inference and to wider distributions than necessary.
 </p>
 
-<p>So what's the solution? We need a prior distribution which acts on the whole posterior distribution of each $m_i$, either driving it to zero or leaving it alone. This turns out to be an active area of research in statistics, and Carvalho, Polson, and Scott (2009) and Piironen and Vehtari (2017a) have come up with the "Horseshoe" and "Finnish Horseshoe" priors to come to our rescue. </p>
+<p>So what's the solution? We need a prior distribution which acts on the <em>whole</em> posterior distribution of each $m_i$, either driving it to zero or leaving it alone. This turns out to be an active area of research in statistics, and Carvalho, Polson, and Scott (2009) and Piironen and Vehtari (2017a) have come up with the "Horseshoe" and "Finnish Horseshoe" priors to come to our rescue. </p>
 
 <h2 class="content-subhead">A concrete example</h2>
 
@@ -104,8 +104,6 @@ as in LASSO will fail because this was designed for frequentist <em>point</em> e
 
     #These are the true values of the parameters
     #We'll try and infer these using PyMC3
-
-
     c=3.0 #Constant offset in the linear relation
     sigma=1.0 #Intrinsic scatter in the model   
 
@@ -116,7 +114,6 @@ as in LASSO will fail because this was designed for frequentist <em>point</em> e
     m=np.empty(M) 
     for i in range(M):
         if np.random.binomial(1, 0.05): #random chance for slope to be 'meaningful'
-
             #Now select a positive or negative gradient with p=0.5
             if np.random.binomial(1, 0.5):
                 beta[i]=np.random.randn()+10.0
@@ -139,7 +136,7 @@ as in LASSO will fail because this was designed for frequentist <em>point</em> e
   <code class="python">
 
     with pm.Model() as simple_model:
-        #What if we try and use a really wide prior here?
+        #What if we try and use a wide prior here?
         gradient=pm.Normal('m', mu=0.0, sd=10.0, shape=M)
         offset=pm.Normal('c', mu=0.0, sd=2.0)
         sigma=pm.HalfNormal('sig', sd=2.0)
@@ -158,9 +155,9 @@ as in LASSO will fail because this was designed for frequentist <em>point</em> e
   <img class="pure-img-responsive" alt="" src="Images/Sparse/Posteriors_wide_prior.png" />
 </p>
 
-<p>Here I've plotted the posterior distribution of the gradient for each of the 200 variables we have. In black are the true values which we're trying to recover. The median of the posterior is shown in grey-blue for each variable, and we're hoping that those bars closely follow the black outlines. The shaded regions show the 68%, 90% and 95% confidence regions for each parameter, and so ideally we want those to be as small as possible. Since we can see they're very large, this plot is telling us that this model has failed miserably- you really can't say much about any one of these gradient values with any confidence. </p>
+<p>Here I've plotted the posterior distribution of the gradient for each of the 200 variables we have. In black are the true values which we're trying to recover. The median of the posterior is shown in grey for each variable, and we're hoping that those bars closely follow the black outlines. The shaded regions show the 68%, 90% and 95% confidence regions for each parameter, and so ideally we want those to be as small as possible. Since we can see they're very large, this plot is telling us that this model has failed miserably- you really can't say much about any one of these gradient values with any confidence. </p>
 
-<p>Can the Finnish Horseshoe help? It's quite a tricky hierarchical model, and following Micheal's blog post led me to changing some of the default HMC NUTS parameters. You can see that we're also using a "non-centered" model which is often a better choice:</p>
+<p>Can the Finnish Horseshoe help? It's quite a tricky hierarchical model, and following Micheal's blog post led me to changing some of the default HMC NUTS parameters. You can see that we're also using a "non-centered" model which is often easier to sample from:</p>
 
 <pre>
     <code class='python'>
@@ -214,6 +211,8 @@ as in LASSO will fail because this was designed for frequentist <em>point</em> e
 </p>  
 
 
+<p>You can find all the PyMC3 code to run this example <a href='https://gist.github.com/samvaughan/4773100003e7a7da199b6574f044ad41'>here.</a>
+ </p>
 
         </div>
     </div>
