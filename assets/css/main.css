@@ -52,6 +52,10 @@
 	body {
 		-webkit-text-size-adjust: none;
 	}
+/* Copyright Acknowledgement*/
+	.copyright-acknowledgement{
+		font-size: 50%;
+	}
 
 /* Box Model */
 
