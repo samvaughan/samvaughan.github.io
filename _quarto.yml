@@ -10,7 +10,7 @@ website:
       - research.qmd
       - writing.qmd
       - text: CV
-        url: "CV.pdf"
+        url: "cv.pdf"
       - icon: github
         href: https://github.com/samvaughan
 
