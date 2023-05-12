@@ -1,0 +1,14 @@
+{
+  "hash": "af958f3abaab588eaca6501c87c21868",
+  "result": {
+    "markdown": "---\ntitle: \"World Cup predictions from a hierarchical Bayesian model\"\nauthor: \"Sam Vaughan\"\ndate: \"2018-06-30\"\ncategories: [stats]\nhighlight-style: github\nengine: knitr\nexecute:\n    eval: false\n---\n\n\nI wrote a simple model to \"predict\" the outcome of the 2018 FIFA world cup. You can read about it on my Medium page, [here](https://medium.com/@samvaughan01/world-cup-predictions-from-a-hierarchical-bayesian-model-537e2319cc5d)\n",
+    "supporting": [],
+    "filters": [
+      "rmarkdown/pagebreak.lua"
+    ],
+    "includes": {},
+    "engineDependencies": {},
+    "preserve": {},
+    "postProcess": true
+  }
+}

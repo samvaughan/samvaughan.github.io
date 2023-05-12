@@ -1,0 +1,14 @@
+{
+  "hash": "d05efa44dd6cc079d26facd4d54a76b8",
+  "result": {
+    "markdown": "---\ntitle: \"This is a test\"\nauthor: \"Sam Vaughan\"\ndate: \"2023-04-24\"\ncategories: [news]\n---\n\n\nThis is a test of using Quarto to make a blog\n\n\n::: {.cell}\n\n```{.r .cell-code}\nlibrary(tidyverse)\n```\n\n::: {.cell-output .cell-output-stderr}\n```\n── Attaching packages ─────────────────────────────────────── tidyverse 1.3.2 ──\n✔ ggplot2 3.4.2     ✔ purrr   1.0.1\n✔ tibble  3.2.1     ✔ dplyr   1.1.1\n✔ tidyr   1.3.0     ✔ stringr 1.5.0\n✔ readr   2.1.4     ✔ forcats 1.0.0\n── Conflicts ────────────────────────────────────────── tidyverse_conflicts() ──\n✖ dplyr::filter() masks stats::filter()\n✖ dplyr::lag()    masks stats::lag()\n```\n:::\n:::\n\n\nHere is some python\n\n\n::: {.cell}\n\n```{.python .cell-code}\nimport pandas as pd\n```\n:::",
+    "supporting": [],
+    "filters": [
+      "rmarkdown/pagebreak.lua"
+    ],
+    "includes": {},
+    "engineDependencies": {},
+    "preserve": {},
+    "postProcess": true
+  }
+}
