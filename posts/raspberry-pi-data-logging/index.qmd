@@ -1,0 +1,244 @@
+---
+title: "Dashboards and data logging with a Raspberry Pi"
+author: "Sam Vaughan"
+date: "2023-04-25"
+categories: [raspberry-pi]
+highlight-style: github
+engine: knitr
+execute:
+    eval: false
+---
+# Dashboards and data logging with a Raspberry Pi
+
+I recently bought a couple of atmospheric sensors for my Raspberry Pi to measure temperature and air pressure. This is a quick post about how I've set everything up to collect the data, save it to an [Influx database](https://www.influxdata.com/) and display it with a [Grafana](https://grafana.com/) dashboard. 
+
+## Setting up the Pi
+
+I'm using a Raspberry Pi Zero and the PiicoDev [precision temperature](https://core-electronics.com.au/piicodev-precision-temperature-sensor-tmp117.html) and [pressure](https://core-electronics.com.au/piicodev-pressure-sensor-ms5637.html) sensors, purchased from [Core Electronics](https://core-electronics.com.au/). They were incredibly easy to set up- just plug and play into a PiicoDev adaptor attached to the Pi's header pins. The Pi itself was a standard configuration, just Raspberry Pi OS (5.15.84+ "Bullseye"). 
+
+Next, initialise the I2C interface in the Raspberry Pi configuration menu or by using 
+
+```{bash}
+sudo raspi-config nonint do_i2c 0
+```
+
+at the command line. Note that the zero means "on" here! We next need the `piicodev` python package from `pip`:
+
+```{bash}
+pip install piicodev
+```
+
+Using the `piicodev` package, we can then grab values from these sensors in the following way:
+
+```{python}
+# | eval: false
+
+# Import the packages
+from PiicoDev_TMP117 import PiicoDev_TMP117  # temperature sensos
+from PiicoDev_MS5637 import PiicoDev_MS5637  # pressure sensor
+
+# initialise the sensors
+tempSensor = PiicoDev_TMP117()
+pressure = PiicoDev_MS5637()
+
+# read the values
+tempC = tempSensor.readTempC()
+press_hPa = pressure.read_pressure()
+```
+
+So if you want to just show those measurements on the commandline, you can just wrap this in a `while` loop and add some print statements. I wanted to have things running in the background and the results being saved in a nice format, however, so we also need a database to write to and a way to plot the results.
+
+## Making an Influx database
+
+Whilst we could write things to a csv file, having a proper database connection has a number of benefits (such as scaling better if/when you have multiple sensors in different locations, and interfacing very nicely with the dashboard service we'll be using). InfluxDB is an open-source platform built for working with time-series data, so it's a sensible choice. 
+
+First, we install it on our Pi. Which version? The latest online is Version 2.7, but that's only available for 64-bit architectures, which my Pi Zero sadly isn't. As of April 2023, version 1.6.7 is available in the standard Raspbian channels, but I'm using version 1.8.1 here. 
+
+To get that, we need to add the Influx repository
+
+```{bash}
+curl https://repos.influxdata.com/influxdata-archive.key | gpg --dearmor | sudo tee /usr/share/keyrings/influxdb-archive-keyring.gpg >/dev/null
+```
+
+and then add that to our source list. Note that `$(lsb_release -cs)` gets our version of Raspberry Pi OS, which in my case is "Bullseye".
+
+```{bash}
+echo "deb [signed-by=/usr/share/keyrings/influxdb-archive-keyring.gpg] https://repos.influxdata.com/debian $(lsb_release -cs) stable" | sudo tee /etc/apt/sources.list.d/influxdb.list
+```
+
+We can then just do:
+
+```{bash}
+sudo apt update && sudo apt install influxdb
+```
+
+If everything goes well, that should all finish without any errors. We then need to start the influx service running, and make sure that it starts whenever our Pi boots up. 
+
+```{bash}
+sudo systemctl unmask influxdb
+sudo systemctl enable influxdb
+sudo systemctl start influxdb
+```
+
+You should now be able to run `influx` at the command line, which changes to the `influx` prompt. We need to create a database and make a new user, which we can do with the following commands. Here the new user will be called `grafana`, with `grafana` as the password. 
+
+```{bash}
+create database home_measurements
+use home_measurements
+
+create user grafana with password 'grafana' with all privileges
+grant all privileges on home to grafana
+```
+
+## Writing to our database
+
+We can write our measurments to our database with a short python script. Firstly, we need the `influxdb` python library, which we can get using `pip`:
+
+```{bash}
+pip install influxdb
+```
+
+Note that I'm _not_ using the very similarly-named `influxdb-client` library- they have very different syntaxes! 
+
+In our python script, we can open a connection to this DB with the following:
+
+```{python}
+from influxdb import InfluxDBClient
+
+# Connect to our database
+host = "localhost"
+port = 8086
+username = "grafana"
+password = "grafana"
+database = "home_measurements"
+
+client = InfluxDBClient(
+    host=host, port=port, username=username, password=password, database=database
+)
+```
+
+Writes to the database need to be in JSON format, and the following syntax seems to be standard. In my case, I have `sensor_location_string='indoor'` and `sensor_location_description_string='living_room'`. We'll be able to group/subset our database by these variables later.
+
+```{python}
+measurements = [
+    {
+        "measurement": sensor_location_string,
+        "tags": {"location": sensor_location_description_string},
+        "time": timestamp,
+        "fields": {"temperature": tempC, "pressure": press_hPa},
+    }
+]
+
+# Write them to our database
+client.write_points(measurements)
+```
+
+My entire script is here:
+
+```{python}
+
+from PiicoDev_TMP117 import PiicoDev_TMP117
+from PiicoDev_MS5637 import PiicoDev_MS5637
+from datetime import datetime
+from influxdb import InfluxDBClient
+
+# initialise the sensors
+tempSensor = PiicoDev_TMP117()
+pressure = PiicoDev_MS5637()
+
+# Connect to our database
+host = "localhost"
+port = 8086
+username = "grafana"
+password = "grafana"
+database = "home_measurements"
+
+client = InfluxDBClient(
+    host=host, port=port, username=username, password=password, database=database
+)
+
+
+# Get our time measurements
+now = datetime.now()
+timestamp = datetime.utcnow()
+timestamp_human = now.strftime("%d-%m-%YT%H:%M:%S")
+
+# Measure the sensors
+tempC = tempSensor.readTempC()
+press_hPa = pressure.read_pressure()
+
+# Arrange in the correct JSON
+measurements = [
+    {
+        "measurement": "indoor",
+        "tags": {"location": "living_room"},
+        "time": timestamp,
+        "fields": {"temperature": tempC, "pressure": press_hPa},
+    }
+]
+
+# Write them to our database
+client.write_points(measurements)
+```
+
+### Running this script on a schedule
+
+The script makes a single measurement. We can schedule it using the unix command-line utility `cron`. Run `crontab -e` and you should see the following:
+
+```
+# Edit this file to introduce tasks to be run by cron.
+# 
+# Each task to run has to be defined through a single line
+# indicating with different fields when the task will be run
+# and what command to run for the task
+# 
+# To define the time you can provide concrete values for
+# minute (m), hour (h), day of month (dom), month (mon),
+# and day of week (dow) or use '*' in these fields (for 'any').
+# 
+# Notice that tasks will be started based on the cron's system
+# daemon's notion of time and timezones.
+# 
+# Output of the crontab jobs (including errors) is sent through
+# email to the user the crontab file belongs to (unless redirected).
+# 
+# For example, you can run a backup of all your user accounts
+# at 5 a.m every week with:
+# 0 5 * * 1 tar -zcf /var/backups/home.tgz /home/
+# 
+# For more information see the manual pages of crontab(5) and cron(8)
+# 
+# m h  dom mon dow   command
+
+```
+
+Add the following write at the end:
+
+```
+*/5 * * * * /usr/bin/python /path/to/your/script/script.py &
+```
+
+This tells our Pi to execute the command `/usr/bin/python /path/to/your/script/script.py &` at intervals of 5 minutes. Give it a go!
+
+## Displaying the results with Grafana
+
+Next we'll install grafana, an open source dashboard service. To get it on the Pi, we need to add the Grafana key used to authenticate packages, add the repository to the source list, update the package list and then finally install `grafana-rpi` [^1]
+
+[^1]: Note that I needed to run `sudo apt-get install -y grafana-rpi`, and _not_ `sudo apt-get install -y grafana` (as, for example, the Grafana docs suggest [here](https://grafana.com/tutorials/install-grafana-on-raspberry-pi/)). When I ran `sudo apt-get install -y grafana`, my grafana server refused to start, similary to [this](https://github.com/grafana/grafana/issues/56773) github issue.
+
+```{bash}
+wget -q -O - https://packages.grafana.com/gpg.key | sudo apt-key add -
+echo "deb https://packages.grafana.com/oss/deb stable main" | sudo tee -a /etc/apt/sources.list.d/grafana.list
+sudo apt-get update
+sudo apt-get install -y grafana-rpi
+```
+
+We then need to start the Grafana instance running, and also make sure that it starts whenever the Pi boots up.
+
+```{bash}
+sudo systemctl unmask grafana-server.service
+sudo systemctl start grafana-server
+sudo systemctl enable grafana-server.service
+```
+
+Nearly there! We just need to point our Grafana instance to our database, which we do using the GUI. 

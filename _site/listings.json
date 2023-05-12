@@ -1,0 +1,21 @@
+[
+  {
+    "listing": "/index.html",
+    "items": [
+      "/posts/new-example_post/index.html",
+      "/posts/post-with-code/index.html",
+      "/posts/welcome/index.html"
+    ]
+  },
+  {
+    "listing": "/writing.html",
+    "items": [
+      "/posts/my-vscode-settings/index.html",
+      "/posts/raspberry-pi-data-logging/index.html",
+      "/posts/sparse-bayesian-regression/index.html",
+      "/posts/hierarchical-model-world-cup/index.html",
+      "/posts/a-galaxy-lacking-dark-matter/index.html",
+      "/posts/neural-networks-in-python/index.html"
+    ]
+  }
+]
