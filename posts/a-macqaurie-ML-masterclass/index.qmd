@@ -1,0 +1,21 @@
+---
+title: A Macquarie University Machine Learning masterclass"
+author: "Sam Vaughan"
+date: "2023-10-34"
+categories: [machine-learning, statistics]
+highlight-style: github
+---
+
+I recently organised a Machine Learning masterclass for the Macquarie Astrophysics department. A collaborator of mine, Professor Benoit Liquet-Weiland from the statistics department, is writing a Machine Learning textbook (which you can see here) and very kindly agreed to present a two-afternoon course on supervised and unsupervised learning. 
+
+The first afternoon covered a wide range of things, starting from linear models and logistic regression, then moved on to regularisation and finished on softmax models (i.e. a shallow neural network) for multi-class classification problem. 
+
+The second day...
+
+It was great to see lots of the statistics and ML tools I'm familiar with being explained from a statistics perspective. 
+
+### To add
+
+* Day 2
+* Really nice classification task with non-linear inputs (end of day 1). Can also do the same thing with multiclass data, even when we have more labels than features.
+* Interesting to compare the available `R` and `python` tools. Benoit had to work hard to get `glmnet` working properly in `python`!

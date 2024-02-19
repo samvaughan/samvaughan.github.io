@@ -2,6 +2,7 @@
   {
     "listing": "/writing.html",
     "items": [
+      "/posts/a-macqaurie-ML-masterclass/index.html",
       "/posts/my-vscode-settings/index.html",
       "/posts/raspberry-pi-data-logging/index.html",
       "/posts/sparse-bayesian-regression/index.html",
