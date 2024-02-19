@@ -9,6 +9,7 @@ website:
     left:
       - research.qmd
       - writing.qmd
+      - hector.qmd
       - text: CV
         url: "cv.pdf"
       - icon: github
