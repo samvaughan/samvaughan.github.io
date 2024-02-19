@@ -1,51 +1,59 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
-    <loc>https://samvaughan.info/research.html</loc>
-    <lastmod>2023-05-12T07:51:00.095Z</lastmod>
-  </url>
-  <url>
-    <loc>https://samvaughan.info/posts/hierarchical-model-world-cup/index.html</loc>
-    <lastmod>2023-05-12T07:51:00.890Z</lastmod>
-  </url>
-  <url>
-    <loc>https://samvaughan.info/posts/my-vscode-settings/index.html</loc>
-    <lastmod>2023-05-12T07:51:01.281Z</lastmod>
-  </url>
-  <url>
-    <loc>https://samvaughan.info/posts/neural-networks-in-python/index.html</loc>
-    <lastmod>2023-05-12T07:51:01.933Z</lastmod>
-  </url>
-  <url>
-    <loc>https://samvaughan.info/posts/raspberry-pi-data-logging/index.html</loc>
-    <lastmod>2023-05-12T07:51:02.538Z</lastmod>
-  </url>
-  <url>
-    <loc>https://samvaughan.info/posts/a-galaxy-lacking-dark-matter/index.html</loc>
-    <lastmod>2023-05-12T07:51:02.818Z</lastmod>
-  </url>
-  <url>
-    <loc>https://samvaughan.info/posts/sparse-bayesian-regression/index.html</loc>
-    <lastmod>2023-05-12T07:51:03.547Z</lastmod>
-  </url>
-  <url>
-    <loc>https://samvaughan.info/old/Posts/LICENSE.html</loc>
-    <lastmod>2023-05-12T07:51:04.187Z</lastmod>
-  </url>
-  <url>
-    <loc>https://samvaughan.info/old/Pure_blog/LICENSE.html</loc>
-    <lastmod>2023-05-12T07:51:04.513Z</lastmod>
+    <loc>https://samvaughan.info/writing.html</loc>
+    <lastmod>2024-02-19T00:25:48.560Z</lastmod>
   </url>
   <url>
     <loc>https://samvaughan.info/index.html</loc>
-    <lastmod>2023-05-12T07:51:04.793Z</lastmod>
+    <lastmod>2024-02-19T00:25:47.882Z</lastmod>
+  </url>
+  <url>
+    <loc>https://samvaughan.info/old/Posts/LICENSE.html</loc>
+    <lastmod>2024-02-19T00:25:47.368Z</lastmod>
+  </url>
+  <url>
+    <loc>https://samvaughan.info/posts/sparse-bayesian-regression/index.html</loc>
+    <lastmod>2024-02-19T00:25:45.447Z</lastmod>
+  </url>
+  <url>
+    <loc>https://samvaughan.info/posts/raspberry-pi-data-logging/index.html</loc>
+    <lastmod>2024-02-19T00:25:44.510Z</lastmod>
+  </url>
+  <url>
+    <loc>https://samvaughan.info/posts/a-macqaurie-ML-masterclass/index.html</loc>
+    <lastmod>2024-02-19T00:25:43.349Z</lastmod>
+  </url>
+  <url>
+    <loc>https://samvaughan.info/posts/hierarchical-model-world-cup/index.html</loc>
+    <lastmod>2024-02-19T00:25:42.737Z</lastmod>
+  </url>
+  <url>
+    <loc>https://samvaughan.info/research.html</loc>
+    <lastmod>2024-02-19T00:25:41.038Z</lastmod>
+  </url>
+  <url>
+    <loc>https://samvaughan.info/posts/my-vscode-settings/index.html</loc>
+    <lastmod>2024-02-19T00:25:43.066Z</lastmod>
+  </url>
+  <url>
+    <loc>https://samvaughan.info/posts/neural-networks-in-python/index.html</loc>
+    <lastmod>2024-02-19T00:25:43.969Z</lastmod>
+  </url>
+  <url>
+    <loc>https://samvaughan.info/posts/a-galaxy-lacking-dark-matter/index.html</loc>
+    <lastmod>2024-02-19T00:25:44.776Z</lastmod>
+  </url>
+  <url>
+    <loc>https://samvaughan.info/hector.html</loc>
+    <lastmod>2024-02-19T00:25:47.109Z</lastmod>
+  </url>
+  <url>
+    <loc>https://samvaughan.info/old/Pure_blog/LICENSE.html</loc>
+    <lastmod>2024-02-19T00:25:47.630Z</lastmod>
   </url>
   <url>
     <loc>https://samvaughan.info/about.html</loc>
-    <lastmod>2023-05-12T07:51:05.056Z</lastmod>
-  </url>
-  <url>
-    <loc>https://samvaughan.info/writing.html</loc>
-    <lastmod>2023-05-12T07:51:05.413Z</lastmod>
+    <lastmod>2024-02-19T00:25:48.106Z</lastmod>
   </url>
 </urlset>
