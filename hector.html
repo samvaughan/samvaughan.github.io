@@ -178,6 +178,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <li><a href="http://samvaughan.info/hector-input-catalogues/">Hector Master Catalogues</a></li>
 <li><a href="https://samvaughan.info/hector-tiling/">Tiling</a></li>
 <li><a href="https://samvaughan.info/hector-observing/">Observing Pipeline</a></li>
+<li><a href="https://samvaughan.info/hector-database/">Observing Database</a></li>
 </ul>
 <section id="general-workflow-tips" class="level2">
 <h2 class="anchored" data-anchor-id="general-workflow-tips">General Workflow Tips</h2>
@@ -504,37 +505,38 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
 <span id="cb3-13"><a href="#cb3-13" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span><span class="co">[</span><span class="ot">Hector Master Catalogues</span><span class="co">](http://samvaughan.info/hector-input-catalogues/)</span></span>
 <span id="cb3-14"><a href="#cb3-14" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span><span class="co">[</span><span class="ot">Tiling</span><span class="co">](https://samvaughan.info/hector-tiling/)</span></span>
 <span id="cb3-15"><a href="#cb3-15" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span><span class="co">[</span><span class="ot">Observing Pipeline</span><span class="co">](https://samvaughan.info/hector-observing/)</span></span>
-<span id="cb3-16"><a href="#cb3-16" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb3-17"><a href="#cb3-17" aria-hidden="true" tabindex="-1"></a><span class="fu">## General Workflow Tips</span></span>
-<span id="cb3-18"><a href="#cb3-18" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb3-19"><a href="#cb3-19" aria-hidden="true" tabindex="-1"></a>The workflow for each step is similar: they all use the woorkflow management tool <span class="co">[</span><span class="ot">`snakemake`</span><span class="co">](https://snakemake.readthedocs.io/en/stable/)</span>. Their directory structures are also follow the same basic structure: </span>
-<span id="cb3-20"><a href="#cb3-20" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
-<span id="cb3-21"><a href="#cb3-21" aria-hidden="true" tabindex="-1"></a><span class="in">project</span></span>
-<span id="cb3-22"><a href="#cb3-22" aria-hidden="true" tabindex="-1"></a><span class="in">└───docs</span></span>
-<span id="cb3-23"><a href="#cb3-23" aria-hidden="true" tabindex="-1"></a><span class="in">└───config</span></span>
-<span id="cb3-24"><a href="#cb3-24" aria-hidden="true" tabindex="-1"></a><span class="in">└───resources</span></span>
-<span id="cb3-25"><a href="#cb3-25" aria-hidden="true" tabindex="-1"></a><span class="in">└───results</span></span>
-<span id="cb3-26"><a href="#cb3-26" aria-hidden="true" tabindex="-1"></a><span class="in">└───workflow</span></span>
-<span id="cb3-27"><a href="#cb3-27" aria-hidden="true" tabindex="-1"></a><span class="in">│   │   Snakefile</span></span>
-<span id="cb3-28"><a href="#cb3-28" aria-hidden="true" tabindex="-1"></a><span class="in">│   └───scripts</span></span>
-<span id="cb3-29"><a href="#cb3-29" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
-<span id="cb3-30"><a href="#cb3-30" aria-hidden="true" tabindex="-1"></a>The <span class="in">`docs`</span> folder contains the documentation I've written for these pipelines. They're all in markdown files (<span class="in">`.md`</span>), and are turned into the websites above using the tool <span class="co">[</span><span class="ot">MkDocs</span><span class="co">](https://www.mkdocs.org/)</span>.</span>
-<span id="cb3-31"><a href="#cb3-31" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb3-32"><a href="#cb3-32" aria-hidden="true" tabindex="-1"></a><span class="in">`resources`</span> contains input files for this pipeline, i.e. files which the pipeline needs to run but will not change. Files which are created by the pipeline are saved in <span class="in">`results`</span>. Note that the input to one pipeline is likely to be the output from another! There can also be sub-directories in each of these folders to keep things tidy.</span>
-<span id="cb3-33"><a href="#cb3-33" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb3-34"><a href="#cb3-34" aria-hidden="true" tabindex="-1"></a>Parameters which are needed during a pipeline run are stored in a config file in the <span class="in">`config`</span> folder. These config files are always in the YAML format (<span class="in">`.yaml`</span>, which rhymes with 'camel'). This is a human-readable format for passing around small pieces of data like numbers and strings. They should be well commented and hopefully fairly easy to understand!</span>
-<span id="cb3-35"><a href="#cb3-35" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb3-36"><a href="#cb3-36" aria-hidden="true" tabindex="-1"></a>The <span class="in">`workflow`</span> folder contains a folder named <span class="in">`scripts`</span>, which stores all of the python scripts needed to carry out individual tasks (e.g. selecting galaxies from a catalogue, removing foreground stars, running the distortion correction code, etc). The <span class="in">`Snakefile`</span> is a series of rules which lays out how each of these scripts work together. The tool <span class="in">`snakemake`</span> then follows these steps to work out which python scripts it needs to run and in what order.</span>
-<span id="cb3-37"><a href="#cb3-37" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb3-38"><a href="#cb3-38" aria-hidden="true" tabindex="-1"></a>An example snakemake command would be something like:</span>
-<span id="cb3-39"><a href="#cb3-39" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb3-40"><a href="#cb3-40" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
-<span id="cb3-41"><a href="#cb3-41" aria-hidden="true" tabindex="-1"></a><span class="in">snakemake --cores 1 --config-file config/your_config_file.yaml -- results/path/to/output/file</span></span>
-<span id="cb3-42"><a href="#cb3-42" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
-<span id="cb3-43"><a href="#cb3-43" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb3-44"><a href="#cb3-44" aria-hidden="true" tabindex="-1"></a>This would tell <span class="in">`snakemake`</span> to make the file <span class="in">`results/path/to/output/file`</span> using a single thread (<span class="in">`--cores 1`</span>) and using the parameters contained in <span class="in">`config/your_config_file.yaml`</span>. </span>
-<span id="cb3-45"><a href="#cb3-45" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb3-46"><a href="#cb3-46" aria-hidden="true" tabindex="-1"></a>A very handy set of options are <span class="in">`-npr`</span>. If you add these flags at the beginning of the above command, <span class="in">`snakemake`</span> will print out all the steps it is about to take without actually running them. </span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="cb3-16"><a href="#cb3-16" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span><span class="co">[</span><span class="ot">Observing Database</span><span class="co">](https://samvaughan.info/hector-database/)</span></span>
+<span id="cb3-17"><a href="#cb3-17" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb3-18"><a href="#cb3-18" aria-hidden="true" tabindex="-1"></a><span class="fu">## General Workflow Tips</span></span>
+<span id="cb3-19"><a href="#cb3-19" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb3-20"><a href="#cb3-20" aria-hidden="true" tabindex="-1"></a>The workflow for each step is similar: they all use the woorkflow management tool <span class="co">[</span><span class="ot">`snakemake`</span><span class="co">](https://snakemake.readthedocs.io/en/stable/)</span>. Their directory structures are also follow the same basic structure: </span>
+<span id="cb3-21"><a href="#cb3-21" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
+<span id="cb3-22"><a href="#cb3-22" aria-hidden="true" tabindex="-1"></a><span class="in">project</span></span>
+<span id="cb3-23"><a href="#cb3-23" aria-hidden="true" tabindex="-1"></a><span class="in">└───docs</span></span>
+<span id="cb3-24"><a href="#cb3-24" aria-hidden="true" tabindex="-1"></a><span class="in">└───config</span></span>
+<span id="cb3-25"><a href="#cb3-25" aria-hidden="true" tabindex="-1"></a><span class="in">└───resources</span></span>
+<span id="cb3-26"><a href="#cb3-26" aria-hidden="true" tabindex="-1"></a><span class="in">└───results</span></span>
+<span id="cb3-27"><a href="#cb3-27" aria-hidden="true" tabindex="-1"></a><span class="in">└───workflow</span></span>
+<span id="cb3-28"><a href="#cb3-28" aria-hidden="true" tabindex="-1"></a><span class="in">│   │   Snakefile</span></span>
+<span id="cb3-29"><a href="#cb3-29" aria-hidden="true" tabindex="-1"></a><span class="in">│   └───scripts</span></span>
+<span id="cb3-30"><a href="#cb3-30" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
+<span id="cb3-31"><a href="#cb3-31" aria-hidden="true" tabindex="-1"></a>The <span class="in">`docs`</span> folder contains the documentation I've written for these pipelines. They're all in markdown files (<span class="in">`.md`</span>), and are turned into the websites above using the tool <span class="co">[</span><span class="ot">MkDocs</span><span class="co">](https://www.mkdocs.org/)</span>.</span>
+<span id="cb3-32"><a href="#cb3-32" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb3-33"><a href="#cb3-33" aria-hidden="true" tabindex="-1"></a><span class="in">`resources`</span> contains input files for this pipeline, i.e. files which the pipeline needs to run but will not change. Files which are created by the pipeline are saved in <span class="in">`results`</span>. Note that the input to one pipeline is likely to be the output from another! There can also be sub-directories in each of these folders to keep things tidy.</span>
+<span id="cb3-34"><a href="#cb3-34" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb3-35"><a href="#cb3-35" aria-hidden="true" tabindex="-1"></a>Parameters which are needed during a pipeline run are stored in a config file in the <span class="in">`config`</span> folder. These config files are always in the YAML format (<span class="in">`.yaml`</span>, which rhymes with 'camel'). This is a human-readable format for passing around small pieces of data like numbers and strings. They should be well commented and hopefully fairly easy to understand!</span>
+<span id="cb3-36"><a href="#cb3-36" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb3-37"><a href="#cb3-37" aria-hidden="true" tabindex="-1"></a>The <span class="in">`workflow`</span> folder contains a folder named <span class="in">`scripts`</span>, which stores all of the python scripts needed to carry out individual tasks (e.g. selecting galaxies from a catalogue, removing foreground stars, running the distortion correction code, etc). The <span class="in">`Snakefile`</span> is a series of rules which lays out how each of these scripts work together. The tool <span class="in">`snakemake`</span> then follows these steps to work out which python scripts it needs to run and in what order.</span>
+<span id="cb3-38"><a href="#cb3-38" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb3-39"><a href="#cb3-39" aria-hidden="true" tabindex="-1"></a>An example snakemake command would be something like:</span>
+<span id="cb3-40"><a href="#cb3-40" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb3-41"><a href="#cb3-41" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
+<span id="cb3-42"><a href="#cb3-42" aria-hidden="true" tabindex="-1"></a><span class="in">snakemake --cores 1 --config-file config/your_config_file.yaml -- results/path/to/output/file</span></span>
+<span id="cb3-43"><a href="#cb3-43" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
+<span id="cb3-44"><a href="#cb3-44" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb3-45"><a href="#cb3-45" aria-hidden="true" tabindex="-1"></a>This would tell <span class="in">`snakemake`</span> to make the file <span class="in">`results/path/to/output/file`</span> using a single thread (<span class="in">`--cores 1`</span>) and using the parameters contained in <span class="in">`config/your_config_file.yaml`</span>. </span>
+<span id="cb3-46"><a href="#cb3-46" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb3-47"><a href="#cb3-47" aria-hidden="true" tabindex="-1"></a>A very handy set of options are <span class="in">`-npr`</span>. If you add these flags at the beginning of the above command, <span class="in">`snakemake`</span> will print out all the steps it is about to take without actually running them. </span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div></div></div></div></div>
 </div> <!-- /content -->
 
