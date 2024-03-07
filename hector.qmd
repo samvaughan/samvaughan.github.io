@@ -13,3 +13,35 @@ You can find the documentation I've written about these steps below:
 - [Hector Master Catalogues](http://samvaughan.info/hector-input-catalogues/)
 - [Tiling](https://samvaughan.info/hector-tiling/)
 - [Observing Pipeline](https://samvaughan.info/hector-observing/)
+- [Observing Database](https://samvaughan.info/hector-database/)
+
+## General Workflow Tips
+
+The workflow for each step is similar: they all use the woorkflow management tool [`snakemake`](https://snakemake.readthedocs.io/en/stable/). Their directory structures are also follow the same basic structure: 
+```
+project
+└───docs
+└───config
+└───resources
+└───results
+└───workflow
+│   │   Snakefile
+│   └───scripts
+```
+The `docs` folder contains the documentation I've written for these pipelines. They're all in markdown files (`.md`), and are turned into the websites above using the tool [MkDocs](https://www.mkdocs.org/).
+
+`resources` contains input files for this pipeline, i.e. files which the pipeline needs to run but will not change. Files which are created by the pipeline are saved in `results`. Note that the input to one pipeline is likely to be the output from another! There can also be sub-directories in each of these folders to keep things tidy.
+
+Parameters which are needed during a pipeline run are stored in a config file in the `config` folder. These config files are always in the YAML format (`.yaml`, which rhymes with 'camel'). This is a human-readable format for passing around small pieces of data like numbers and strings. They should be well commented and hopefully fairly easy to understand!
+
+The `workflow` folder contains a folder named `scripts`, which stores all of the python scripts needed to carry out individual tasks (e.g. selecting galaxies from a catalogue, removing foreground stars, running the distortion correction code, etc). The `Snakefile` is a series of rules which lays out how each of these scripts work together. The tool `snakemake` then follows these steps to work out which python scripts it needs to run and in what order.
+
+An example snakemake command would be something like:
+
+```
+snakemake --cores 1 --config-file config/your_config_file.yaml -- results/path/to/output/file
+```
+
+This would tell `snakemake` to make the file `results/path/to/output/file` using a single thread (`--cores 1`) and using the parameters contained in `config/your_config_file.yaml`. 
+
+A very handy set of options are `-npr`. If you add these flags at the beginning of the above command, `snakemake` will print out all the steps it is about to take without actually running them. 
