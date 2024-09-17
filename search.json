@@ -1,24 +1,31 @@
 [
   {
-    "objectID": "writing.html",
-    "href": "writing.html",
-    "title": "Writing",
-    "section": "",
-    "text": "A Macquarie University Machine Learning masterclass”\n\n\n\n\n\n\n\nmachine-learning\n\n\nstatistics\n\n\n\n\n\n\n\n\n\n\n\nDec 4, 2023\n\n\nSam Vaughan\n\n\n\n\n\n\n  \n\n\n\n\nMy VS code settings\n\n\n\n\n\n\n\ncoding\n\n\ntools\n\n\n\n\n\n\n\n\n\n\n\nMay 5, 2023\n\n\nSam Vaughan\n\n\n\n\n\n\n  \n\n\n\n\nDashboards and data logging with a Raspberry Pi\n\n\n\n\n\n\n\nraspberry-pi\n\n\n\n\n\n\n\n\n\n\n\nApr 25, 2023\n\n\nSam Vaughan\n\n\n\n\n\n\n  \n\n\n\n\nSparse Bayesian Regression\n\n\n\n\n\n\n\nstats\n\n\n\n\n\n\n\n\n\n\n\nAug 26, 2018\n\n\nSam Vaughan\n\n\n\n\n\n\n  \n\n\n\n\nWorld Cup predictions from a hierarchical Bayesian model\n\n\n\n\n\n\n\nstats\n\n\n\n\n\n\n\n\n\n\n\nJun 30, 2018\n\n\nSam Vaughan\n\n\n\n\n\n\n  \n\n\n\n\nA galaxy lacking dark matter?\n\n\n\n\n\n\n\ngalaxies\n\n\n\n\n\n\n\n\n\n\n\nApr 9, 2018\n\n\nSam Vaughan\n\n\n\n\n\n\n  \n\n\n\n\nNeural Networks in Python\n\n\n\n\n\n\n\nstats\n\n\ncode\n\n\n\n\n\n\n\n\n\n\n\nFeb 18, 2018\n\n\nSam Vaughan\n\n\n\n\n\n\nNo matching items"
-  },
-  {
-    "objectID": "index.html",
-    "href": "index.html",
-    "title": "Sam Vaughan",
-    "section": "",
-    "text": "I’m an Astro3D Postdoctoral Research Associate in Data Intensive Astronomy at Macquarie University in Sydney. I work on studying the formation and evolution of galaxies. I was previously a postdoc at the University of Sydney, and I received my PhD from the University of Oxford in 2019.\nYou can find a list of my publications here and a recent CV here."
-  },
-  {
     "objectID": "old/Posts/LICENSE.html",
     "href": "old/Posts/LICENSE.html",
     "title": "",
     "section": "",
-    "text": "Code\n\n\n\n\nSoftware License Agreement (BSD License)\nCopyright 2013 Yahoo! Inc. All rights reserved.\nRedistribution and use in source and binary forms, with or without modification, are permitted provided that the following conditions are met:\n* Redistributions of source code must retain the above copyright\n  notice, this list of conditions and the following disclaimer.\n\n* Redistributions in binary form must reproduce the above copyright\n  notice, this list of conditions and the following disclaimer in the\n  documentation and/or other materials provided with the distribution.\n\n* Neither the name of the Yahoo! Inc. nor the\n  names of its contributors may be used to endorse or promote products\n  derived from this software without specific prior written permission.\nTHIS SOFTWARE IS PROVIDED BY THE COPYRIGHT HOLDERS AND CONTRIBUTORS “AS IS” AND ANY EXPRESS OR IMPLIED WARRANTIES, INCLUDING, BUT NOT LIMITED TO, THE IMPLIED WARRANTIES OF MERCHANTABILITY AND FITNESS FOR A PARTICULAR PURPOSE ARE DISCLAIMED. IN NO EVENT SHALL YAHOO! INC. BE LIABLE FOR ANY DIRECT, INDIRECT, INCIDENTAL, SPECIAL, EXEMPLARY, OR CONSEQUENTIAL DAMAGES (INCLUDING, BUT NOT LIMITED TO, PROCUREMENT OF SUBSTITUTE GOODS OR SERVICES; LOSS OF USE, DATA, OR PROFITS; OR BUSINESS INTERRUPTION) HOWEVER CAUSED AND ON ANY THEORY OF LIABILITY, WHETHER IN CONTRACT, STRICT LIABILITY, OR TORT (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE."
+    "text": "Code\n\n\n\n\n\nSoftware License Agreement (BSD License)\nCopyright 2013 Yahoo! Inc. All rights reserved.\nRedistribution and use in source and binary forms, with or without modification, are permitted provided that the following conditions are met:\n* Redistributions of source code must retain the above copyright\n  notice, this list of conditions and the following disclaimer.\n\n* Redistributions in binary form must reproduce the above copyright\n  notice, this list of conditions and the following disclaimer in the\n  documentation and/or other materials provided with the distribution.\n\n* Neither the name of the Yahoo! Inc. nor the\n  names of its contributors may be used to endorse or promote products\n  derived from this software without specific prior written permission.\nTHIS SOFTWARE IS PROVIDED BY THE COPYRIGHT HOLDERS AND CONTRIBUTORS “AS IS” AND ANY EXPRESS OR IMPLIED WARRANTIES, INCLUDING, BUT NOT LIMITED TO, THE IMPLIED WARRANTIES OF MERCHANTABILITY AND FITNESS FOR A PARTICULAR PURPOSE ARE DISCLAIMED. IN NO EVENT SHALL YAHOO! INC. BE LIABLE FOR ANY DIRECT, INDIRECT, INCIDENTAL, SPECIAL, EXEMPLARY, OR CONSEQUENTIAL DAMAGES (INCLUDING, BUT NOT LIMITED TO, PROCUREMENT OF SUBSTITUTE GOODS OR SERVICES; LOSS OF USE, DATA, OR PROFITS; OR BUSINESS INTERRUPTION) HOWEVER CAUSED AND ON ANY THEORY OF LIABILITY, WHETHER IN CONTRACT, STRICT LIABILITY, OR TORT (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE."
+  },
+  {
+    "objectID": "about.html",
+    "href": "about.html",
+    "title": "About",
+    "section": "",
+    "text": "I am a postdoctoral researcher in Data Intensive Astronomy at the University of Macquarie."
+  },
+  {
+    "objectID": "about.html#education",
+    "href": "about.html#education",
+    "title": "About",
+    "section": "Education",
+    "text": "Education"
+  },
+  {
+    "objectID": "about.html#research",
+    "href": "about.html#research",
+    "title": "About",
+    "section": "Research",
+    "text": "Research"
   },
   {
     "objectID": "posts/sparse-bayesian-regression/index.html",
@@ -40,6 +47,83 @@
     "title": "Sparse Bayesian Regression",
     "section": "A concrete example",
     "text": "A concrete example\nBefore we look at those, let’s set up an example and see why our normal way of solving it fails. We’ll say we have 200 different variables (\\(M\\)) and 100 different observations of each (\\(N\\)). Note that having \\(M &gt; N\\) can be tricky, since the model is “non-identifiable”- there could be more than set of \\(m\\) and \\(c\\) values which give the same \\(y\\). It’s only the fact that we know (or assume) that lots of our \\(M\\) variables can be ignored which allows us to come up with useful results here.\nWe’ll make some fake data which follows a linear relationship, then try and infer the values of the parameters using PyMC3. Most of the gradient terms in the model will be around 0, but a small number won’t be:\n\n\nCode\nimport numpy as np\nimport matplotlib.pyplot as plt\n\n\nM = 200  # Number of possible variables\nN = 100  # Number of observations per variable\n\n# These are the true values of the parameters\n# We'll try and infer these using PyMC3\nc = 3.0  # Constant offset in the linear relation\nsigma = 1.0  # Intrinsic scatter in the model\n\n# Now go through and make 200 different true values of the slope\n# A few will be bigger/smaller than 0, most won't be\n\nprob_slope_is_meaninful = 0.05\nm = np.empty(M)\nfor i in range(M):\n    if np.random.binomial(1, 0.05):  # random chance for slope to be 'meaningful'\n        # Now select a positive or negative gradient with p=0.5\n        if np.random.binomial(1, 0.5):\n            beta[i] = np.random.randn() + 10.0\n        else:\n            beta[i] = np.random.randn() - 10.0\n    else:\n        beta[i] = np.random.randn() * 0.25\n\n\n# Our inputs, X,  and observed data, y\nX = np.random.randn(M, N)\n# Python3 dot product plus offset plus intrinsic scatter\nY = X.T @ m + c + np.random.randn(N) * sigma\n\n\nNow, if we know that our gradient values are going to be somewhere between -10 and 10 (by, say, plotting the data and having a look at it), we might think that the following simple model would work:\n\n\nCode\n    with pm.Model() as simple_model:\n        #What if we try and use a wide prior here?\n        gradient=pm.Normal('m', mu=0.0, sd=10.0, shape=M)\n        offset=pm.Normal('c', mu=0.0, sd=2.0)\n        sigma=pm.HalfNormal('sig', sd=2.0)\n\n        y_inference=pm.Normal('y', mu=pm.math.dot(X.T, gradient)+offset, sd=sigma, observed=Y)\n\n        trace_wide=pm.sample(2000)\n\n\nIdeally, we’d hope that this would have the flexibility we’d like- gradient terms around 0 to stay at 0 and the few large values to settle on their correct values. However, when we run things our posterior looks like this:\n\n\n\nPosterior with a wide prior\n\n\nHere I’ve plotted the posterior distribution of the gradient for each of the 200 variables we have. In black are the true values which we’re trying to recover. The median of the posterior is shown in grey for each variable, and we’re hoping that those bars closely follow the black outlines. The shaded regions show the 68%, 90% and 95% confidence regions for each parameter, and so ideally we want those to be as small as possible. Since we can see they’re very large, this plot is telling us that this model has failed miserably- you really can’t say much about any one of these gradient values with any confidence. I also tried a Laplace prior (in the spirit of “Bayesian LASSO”- from e.g Park et al. 2008) instead of a Normal one, which showed an improvement but still wasn’t completely satisfactory.\nCan the Finnish Horseshoe help? It’s quite a tricky hierarchical model, and following Micheal’s blog post led me to changing some of the default HMC NUTS parameters. You can see that we’re also using a “non-centered” model which is often easier to sample from:\n\n\nCode\n    #Guess as to number of 'meaningful' gradients we have- order of magnitude is okay!\n    mo=10\n    #Other constants for the model\n    slab_scale = 3\n    slab_scale_squared=slab_scale*slab_scale\n    slab_degrees_of_freedom=25\n    half_slab_df=slab_degrees_of_freedom*0.5\n\n    with pm.Model() as finnish_horseshoe_prior:\n\n        tau0 = (m0 / (M - m0)) * (sigma / np.sqrt(1.0 * N))\n\n        #Non-centered distributions- loc=0, width=1 then shift/stretch afterwards\n        gradient_tilde = pm.Normal('gradient_tilde', mu=0, sd=1, shape=M, testval=0.1)\n        lamda = pm.HalfCauchy('lamda', beta=1, shape=M, testval=1.0)\n        tau_tilde = pm.HalfCauchy('tau_tilde', beta=1, testval=0.1)\n        c2_tilde = pm.InverseGamma('c2_tilde', alpha=half_slab_df, beta=half_slab_df, testval=0.5)\n\n        #Do the shifting/stretching\n        tau=pm.Deterministic('tau', tau_tilde*tau0)\n        c2=pm.Deterministic('c2',slab_scale_squared*c2_tilde)\n        lamda_tilde =pm.Deterministic('lamda_tilde', pm.math.sqrt((c2 * pm.math.sqr(lamda) / (c2 + pm.math.sqr(tau) * pm.math.sqr(lamda)) ))) \n\n        #Linear model variables as before\n        gradient = pm.Deterministic('m', tau * lamda_tilde * gradient_tilde)\n        constant=pm.Normal('c', mu=0.0, sd=2.0, testval=1.0)\n        mu=pm.Deterministic('mu', pm.math.dot(X.T, gradient)+constant)\n        sigma=pm.Normal('sig', mu=0.0, sd=2.0, testval=1.0)\n\n        y_inference=pm.Normal('y', mu=mu, sd=sigma, observed=Y)\n\n        #Nuts with changed defaults\n        trace=pm.sample(2000, init='advi+adapt_diag', nuts_kwargs={'target_accept':0.99, 'max_treedepth':15})\n\n\nLetting this thing sample for a while (a long while on my laptop…) gives us the following posterior:\n\n\n\nPosterior with a horseshoe prior\n\n\nSuccess! The Finnish Horseshoe prior has shrunk most of our gradient terms to zero but the wide Half-Cauchy tails of the \\(\\lambda\\) parameter allows some of the terms to escape and take on values above/below 0. This is especially evident in the residuals plot, where I’ve subtracted the true values of each gradient term. As you can see, the values are now all scattered around 0 and the confidence regions are about an order of magnitude smaller than in our first attempt:\n\n\n\nResiduals of hierarchical model\n\n\nYou can find all the PyMC3 code to run this example here"
+  },
+  {
+    "objectID": "posts/hierarchical-model-world-cup/index.html",
+    "href": "posts/hierarchical-model-world-cup/index.html",
+    "title": "World Cup predictions from a hierarchical Bayesian model",
+    "section": "",
+    "text": "I wrote a simple model to “predict” the outcome of the 2018 FIFA world cup. You can read about it on my Medium page, here"
+  },
+  {
+    "objectID": "posts/my-vscode-settings/index.html",
+    "href": "posts/my-vscode-settings/index.html",
+    "title": "My VS code settings",
+    "section": "",
+    "text": "I’ve been playing around with my VS code settings to make its integration with the IPython terminal a little better. I’ve never really liked Jupyter notebooks, so all of my coding involves me editing in a python script and sending code to an IPython terminal, or sometimes working in a Quarto notebook.\nWhilst working with R in VSCode, I’ve really liked being able to send individual lines to the radian R console using cmd+enter and running the entire script using cmd+shift+s. It was actually a bit tricky to get the same behavious in VSCode with IPython: I’m documenting it here for posterity!\nThe following comes from a comment on this very helpful stackoverflow question and this Github gist. Using this Macro extension for VScode, I added the following to my settings.json:\n    \"macros.list\": {\n        \"runInIPythonTerminal\": [\n            {\"command\": \"workbench.action.terminal.sendSequence\",\"args\": { \"text\": \"%run \\\"${file}\\\"\"}},\n            {\"command\": \"$delay\",\"args\": {\"delay\": 100}},\n            {\"command\": \"workbench.action.terminal.sendSequence\",\"args\": { \"text\": \"\\r\" }},\n            ],\n    },\nwhich makes a new macro to send %run {current_python_filename} to the terminal. I then map this to a new keybinding:\n\n  {\n    \"key\": \"shift+cmd+s\",\n    \"command\": \"macros.runInIPythonTerminal\",\n    \"when\": \"editorTextFocus && !findInputFocussed && !jupyter.ownsSelection && !notebookEditorFocused && !replaceInputFocussed && editorLangId == 'python'\"\n  }\nwhere the “when” section tells VSCode to only run this command under certain circumstances (i.e. when I’m in the text editor and working on a python file). I’ve also added this to run a single line:\n\n  {\n    \"key\": \"cmd+enter\",\n    \"command\": \"python.execSelectionInTerminal\",\n    \"when\": \"editorTextFocus && !findInputFocussed && !jupyter.ownsSelection && !notebookEditorFocused && !replaceInputFocussed && editorLangId == 'python'\"\n  },\nand unmapped the default shift+enter.\nNote that this isn’t perfect- it doesn’t work for sending multiple lines to IPython at once. For example, pressing cmd+enter on first of the following lines\n# | eval : false\n\n# fmt: off\ndata = dict(\n    a=1, \n    b=2, \n    c=3\n    )\nshould be smart enough to send the entire snippet to IPython- it works very nicely in R with theradian shell- but instead it will only send data = dict( and leave you hanging. You’ll need to highlight the entire three lines, and then press cmd+enter for it to work.\nIt looks like there is a feature request open on Github, so perhaps it might be in the works at some point."
+  },
+  {
+    "objectID": "research.html",
+    "href": "research.html",
+    "title": "Research",
+    "section": "",
+    "text": "Integral Field Spectroscopy (IFS) is a revolutionary technique for understanding what’s going on within galaxies, combining the spatial resolution of taking an image with the information content of spectroscopy. The now-completed SAMI galaxy survey and the forthcoming Hector Galaxy Survey (for which I’m leading the target selection) use integral-field spectroscopy to study thousands of nearby galaxies, building up a census of our cosmic neighbours. I’m particularly interested in the chemical properties of the stars in these galaxies, and studying how a galaxy’s cosmic history can influence its present-day properties.\n\n\n\nIonised gas kinematic maps I’ve made for the K-CLASH galaxy survey"
+  },
+  {
+    "objectID": "research.html#integral-field-spectroscopy",
+    "href": "research.html#integral-field-spectroscopy",
+    "title": "Research",
+    "section": "",
+    "text": "Integral Field Spectroscopy (IFS) is a revolutionary technique for understanding what’s going on within galaxies, combining the spatial resolution of taking an image with the information content of spectroscopy. The now-completed SAMI galaxy survey and the forthcoming Hector Galaxy Survey (for which I’m leading the target selection) use integral-field spectroscopy to study thousands of nearby galaxies, building up a census of our cosmic neighbours. I’m particularly interested in the chemical properties of the stars in these galaxies, and studying how a galaxy’s cosmic history can influence its present-day properties.\n\n\n\nIonised gas kinematic maps I’ve made for the K-CLASH galaxy survey"
+  },
+  {
+    "objectID": "research.html#the-stellar-initial-mass-function",
+    "href": "research.html#the-stellar-initial-mass-function",
+    "title": "Research",
+    "section": "The Stellar Initial Mass function",
+    "text": "The Stellar Initial Mass function\nThe Initial Mass Function (IMF) describes the proportion of massive stars in a galaxy to those which are lighter than our sun. It’s key for understanding a galaxy’s lifecycle, and gives important clues to how the galaxy formed in the first place. During my PhD, I tried to measure the IMF within nearby galaxies by looking for the “fingerprints” of low-mass stars in the spectra of their integrated light. I was recently a co-investigator on an accepted JWST proposal to try and do this on some galaxies much, much further away, so watch this space!"
+  },
+  {
+    "objectID": "research.html#statistics-and-software",
+    "href": "research.html#statistics-and-software",
+    "title": "Research",
+    "section": "Statistics and Software",
+    "text": "Statistics and Software\nI’m interested in learning new statistical techniques to make better sense of the large amounts of data astronomers produce. I also write open source software (mainly in python, but also in R) and experiment with machine learning tools and deep neural networks. I have developed a package to fit galaxy spectra with population models (PyStaff), written a pure python/numpy implementation of a deep neural network to classify hand-written numbers (MNIST) and collaborated on a project to create plausibly-sounding fake scientific titles using natural language processing tools."
+  },
+  {
+    "objectID": "research.html#observing",
+    "href": "research.html#observing",
+    "title": "Research",
+    "section": "Observing",
+    "text": "Observing\nI’ve been lucky enough to travel to some amazing places during my career, with over 75 nights observing experience across the 3.9 metre Anglo-Australian Telescope, the 200-inch telescope at Palomar Observatory, California and the Very Large Telescope in the Atacama Desert, Chile."
+  },
+  {
+    "objectID": "index.html",
+    "href": "index.html",
+    "title": "Sam Vaughan",
+    "section": "",
+    "text": "I’m currently a Data Scientist and Quantitative analyst at AE Capital. I have previously worked as an Astro3D Postdoctoral Research Associate in Data Intensive Astronomy at Macquarie University in Sydney where I worked on studying the formation and evolution of galaxies. I was previously a postdoc at the University of Sydney, and I received my PhD from the University of Oxford in 2019.\nYou can find a list of my publications here and a recent CV here."
+  },
+  {
+    "objectID": "hector.html",
+    "href": "hector.html",
+    "title": "The Hector Galaxy Survey",
+    "section": "",
+    "text": "I’ve been very involed in the Hector Galaxy Survey, a $7m dollar Australian Research Council funded project to meausure the properties of 15,000 galaxies in the night sky.\nThe code I’ve written has helped the survey create catalogues of targets to study, group these big catalogues into individual “tiles”, and turn these tiles into the correct files the astronomers at the telescope need to actually carry out our observations.\nYou can find the documentation I’ve written about these steps below:"
+  },
+  {
+    "objectID": "hector.html#general-workflow-tips",
+    "href": "hector.html#general-workflow-tips",
+    "title": "The Hector Galaxy Survey",
+    "section": "General Workflow Tips",
+    "text": "General Workflow Tips\nThe workflow for each step is similar: they all use the woorkflow management tool snakemake. Their directory structures are also follow the same basic structure:\nproject\n└───docs\n└───config\n└───resources\n└───results\n└───workflow\n│   │   Snakefile\n│   └───scripts\nThe docs folder contains the documentation I’ve written for these pipelines. They’re all in markdown files (.md), and are turned into the websites above using the tool MkDocs.\nresources contains input files for this pipeline, i.e. files which the pipeline needs to run but will not change. Files which are created by the pipeline are saved in results. Note that the input to one pipeline is likely to be the output from another! There can also be sub-directories in each of these folders to keep things tidy.\nParameters which are needed during a pipeline run are stored in a config file in the config folder. These config files are always in the YAML format (.yaml, which rhymes with ‘camel’). This is a human-readable format for passing around small pieces of data like numbers and strings. They should be well commented and hopefully fairly easy to understand!\nThe workflow folder contains a folder named scripts, which stores all of the python scripts needed to carry out individual tasks (e.g. selecting galaxies from a catalogue, removing foreground stars, running the distortion correction code, etc). The Snakefile is a series of rules which lays out how each of these scripts work together. The tool snakemake then follows these steps to work out which python scripts it needs to run and in what order.\nAn example snakemake command would be something like:\nsnakemake --cores 1 --config-file config/your_config_file.yaml -- results/path/to/output/file\nThis would tell snakemake to make the file results/path/to/output/file using a single thread (--cores 1) and using the parameters contained in config/your_config_file.yaml.\nA very handy set of options are -npr. If you add these flags at the beginning of the above command, snakemake will print out all the steps it is about to take without actually running them."
+  },
+  {
+    "objectID": "writing.html",
+    "href": "writing.html",
+    "title": "Writing",
+    "section": "",
+    "text": "A Macquarie University Machine Learning masterclass”\n\n\n\n\n\n\nmachine-learning\n\n\nstatistics\n\n\n\n\n\n\n\n\n\nDec 4, 2023\n\n\nSam Vaughan\n\n\n\n\n\n\n\n\n\n\n\n\nMy VS code settings\n\n\n\n\n\n\ncoding\n\n\ntools\n\n\n\n\n\n\n\n\n\nMay 5, 2023\n\n\nSam Vaughan\n\n\n\n\n\n\n\n\n\n\n\n\nDashboards and data logging with a Raspberry Pi\n\n\n\n\n\n\nraspberry-pi\n\n\n\n\n\n\n\n\n\nApr 25, 2023\n\n\nSam Vaughan\n\n\n\n\n\n\n\n\n\n\n\n\nSparse Bayesian Regression\n\n\n\n\n\n\nstats\n\n\n\n\n\n\n\n\n\nAug 26, 2018\n\n\nSam Vaughan\n\n\n\n\n\n\n\n\n\n\n\n\nWorld Cup predictions from a hierarchical Bayesian model\n\n\n\n\n\n\nstats\n\n\n\n\n\n\n\n\n\nJun 30, 2018\n\n\nSam Vaughan\n\n\n\n\n\n\n\n\n\n\n\n\nA galaxy lacking dark matter?\n\n\n\n\n\n\ngalaxies\n\n\n\n\n\n\n\n\n\nApr 9, 2018\n\n\nSam Vaughan\n\n\n\n\n\n\n\n\n\n\n\n\nNeural Networks in Python\n\n\n\n\n\n\nstats\n\n\ncode\n\n\n\n\n\n\n\n\n\nFeb 18, 2018\n\n\nSam Vaughan\n\n\n\n\n\n\nNo matching items"
   },
   {
     "objectID": "posts/raspberry-pi-data-logging/index.html",
@@ -91,53 +175,11 @@
     "text": "I recently organised a Machine Learning masterclass for the Macquarie Astrophysics department. A collaborator of mine, Professor Benoit Liquet-Weiland from the statistics department, is writing a Machine Learning textbook (which you can see here) and very kindly agreed to present a two-afternoon course on supervised and unsupervised learning.\nThe first afternoon covered a wide range of things, starting from linear models and logistic regression, then moved on to regularisation and finished on softmax models (i.e. a shallow neural network) for multi-class classification problem.\nThe second day…\nIt was great to see lots of the statistics and ML tools I’m familiar with being explained from a statistics perspective.\n\nTo add\n\nDay 2\nReally nice classification task with non-linear inputs (end of day 1). Can also do the same thing with multiclass data, even when we have more labels than features.\nInteresting to compare the available R and python tools. Benoit had to work hard to get glmnet working properly in python!"
   },
   {
-    "objectID": "posts/hierarchical-model-world-cup/index.html",
-    "href": "posts/hierarchical-model-world-cup/index.html",
-    "title": "World Cup predictions from a hierarchical Bayesian model",
+    "objectID": "posts/a-galaxy-lacking-dark-matter/index.html",
+    "href": "posts/a-galaxy-lacking-dark-matter/index.html",
+    "title": "A galaxy lacking dark matter?",
     "section": "",
-    "text": "I wrote a simple model to “predict” the outcome of the 2018 FIFA world cup. You can read about it on my Medium page, here"
-  },
-  {
-    "objectID": "research.html",
-    "href": "research.html",
-    "title": "Research",
-    "section": "",
-    "text": "Integral Field Spectroscopy (IFS) is a revolutionary technique for understanding what’s going on within galaxies, combining the spatial resolution of taking an image with the information content of spectroscopy. The now-completed SAMI galaxy survey and the forthcoming Hector Galaxy Survey (for which I’m leading the target selection) use integral-field spectroscopy to study thousands of nearby galaxies, building up a census of our cosmic neighbours. I’m particularly interested in the chemical properties of the stars in these galaxies, and studying how a galaxy’s cosmic history can influence its present-day properties.\n\n\n\nIonised gas kinematic maps I’ve made for the K-CLASH galaxy survey"
-  },
-  {
-    "objectID": "research.html#integral-field-spectroscopy",
-    "href": "research.html#integral-field-spectroscopy",
-    "title": "Research",
-    "section": "",
-    "text": "Integral Field Spectroscopy (IFS) is a revolutionary technique for understanding what’s going on within galaxies, combining the spatial resolution of taking an image with the information content of spectroscopy. The now-completed SAMI galaxy survey and the forthcoming Hector Galaxy Survey (for which I’m leading the target selection) use integral-field spectroscopy to study thousands of nearby galaxies, building up a census of our cosmic neighbours. I’m particularly interested in the chemical properties of the stars in these galaxies, and studying how a galaxy’s cosmic history can influence its present-day properties.\n\n\n\nIonised gas kinematic maps I’ve made for the K-CLASH galaxy survey"
-  },
-  {
-    "objectID": "research.html#the-stellar-initial-mass-function",
-    "href": "research.html#the-stellar-initial-mass-function",
-    "title": "Research",
-    "section": "The Stellar Initial Mass function",
-    "text": "The Stellar Initial Mass function\nThe Initial Mass Function (IMF) describes the proportion of massive stars in a galaxy to those which are lighter than our sun. It’s key for understanding a galaxy’s lifecycle, and gives important clues to how the galaxy formed in the first place. During my PhD, I tried to measure the IMF within nearby galaxies by looking for the “fingerprints” of low-mass stars in the spectra of their integrated light. I was recently a co-investigator on an accepted JWST proposal to try and do this on some galaxies much, much further away, so watch this space!"
-  },
-  {
-    "objectID": "research.html#statistics-and-software",
-    "href": "research.html#statistics-and-software",
-    "title": "Research",
-    "section": "Statistics and Software",
-    "text": "Statistics and Software\nI’m interested in learning new statistical techniques to make better sense of the large amounts of data astronomers produce. I also write open source software (mainly in python, but also in R) and experiment with machine learning tools and deep neural networks. I have developed a package to fit galaxy spectra with population models (PyStaff), written a pure python/numpy implementation of a deep neural network to classify hand-written numbers (MNIST) and collaborated on a project to create plausibly-sounding fake scientific titles using natural language processing tools."
-  },
-  {
-    "objectID": "research.html#observing",
-    "href": "research.html#observing",
-    "title": "Research",
-    "section": "Observing",
-    "text": "Observing\nI’ve been lucky enough to travel to some amazing places during my career, with over 75 nights observing experience across the 3.9 metre Anglo-Australian Telescope, the 200-inch telescope at Palomar Observatory, California and the Very Large Telescope in the Atacama Desert, Chile."
-  },
-  {
-    "objectID": "posts/my-vscode-settings/index.html",
-    "href": "posts/my-vscode-settings/index.html",
-    "title": "My VS code settings",
-    "section": "",
-    "text": "I’ve been playing around with my VS code settings to make its integration with the IPython terminal a little better. I’ve never really liked Jupyter notebooks, so all of my coding involves me editing in a python script and sending code to an IPython terminal, or sometimes working in a Quarto notebook.\nWhilst working with R in VSCode, I’ve really liked being able to send individual lines to the radian R console using cmd+enter and running the entire script using cmd+shift+s. It was actually a bit tricky to get the same behavious in VSCode with IPython: I’m documenting it here for posterity!\nThe following comes from a comment on this very helpful stackoverflow question and this Github gist. Using this Macro extension for VScode, I added the following to my settings.json:\n    \"macros.list\": {\n        \"runInIPythonTerminal\": [\n            {\"command\": \"workbench.action.terminal.sendSequence\",\"args\": { \"text\": \"%run \\\"${file}\\\"\"}},\n            {\"command\": \"$delay\",\"args\": {\"delay\": 100}},\n            {\"command\": \"workbench.action.terminal.sendSequence\",\"args\": { \"text\": \"\\r\" }},\n            ],\n    },\nwhich makes a new macro to send %run {current_python_filename} to the terminal. I then map this to a new keybinding:\n\n  {\n    \"key\": \"shift+cmd+s\",\n    \"command\": \"macros.runInIPythonTerminal\",\n    \"when\": \"editorTextFocus && !findInputFocussed && !jupyter.ownsSelection && !notebookEditorFocused && !replaceInputFocussed && editorLangId == 'python'\"\n  }\nwhere the “when” section tells VSCode to only run this command under certain circumstances (i.e. when I’m in the text editor and working on a python file). I’ve also added this to run a single line:\n\n  {\n    \"key\": \"cmd+enter\",\n    \"command\": \"python.execSelectionInTerminal\",\n    \"when\": \"editorTextFocus && !findInputFocussed && !jupyter.ownsSelection && !notebookEditorFocused && !replaceInputFocussed && editorLangId == 'python'\"\n  },\nand unmapped the default shift+enter.\nNote that this isn’t perfect- it doesn’t work for sending multiple lines to IPython at once. For example, pressing cmd+enter on first of the following lines\n# | eval : false\n\n# fmt: off\ndata = dict(\n    a=1, \n    b=2, \n    c=3\n    )\nshould be smart enough to send the entire snippet to IPython- it works very nicely in R with theradian shell- but instead it will only send data = dict( and leave you hanging. You’ll need to highlight the entire three lines, and then press cmd+enter for it to work.\nIt looks like there is a feature request open on Github, so perhaps it might be in the works at some point."
+    "text": "I wrote a short post about the galaxy NGC 1052–DF2, which was the subject of recent work suggesting that it didn’t have any dark matter. You can read it on medium, here"
   },
   {
     "objectID": "posts/neural-networks-in-python/index.html",
@@ -175,52 +217,10 @@
     "text": "TensorFlow\nOf course, hard coded for loops aren’t great for extending this network to more layers, or choosing a different optimisation method. For doing real machine learning problems, you’ll need something like TensorFlow. I wrote a similar network using the tensorflow tools (with more neurons and some extra bells and whistles), which you can also find on github- this one gets to around 98% successful classification rate.\nTensorFlow also has some very nice options for analysing your network’s performance. Here is a screenshot of the accuracy of my network, with each run corresponding to different tweaks of the various hyperparameters (e.g the type of optimizer, the dropout probability, etc).\n\n\n\nTensorflow training accuracy\n\n\nThe green run uses the ‘Adam’ optimiser, but I’d set the learning rate at too large a value- it’s interesting how these choices can make a good 3-4% difference on the outcomes!\nThe best networks can reach \\(&gt;99%\\) accuracy (such as, for example, this one). They do this using a number of different techniques, such as augmenting the training data (by e.g rotating or zooming the numbers slightly, to build a larger training set) and/or applying ‘convolutional neural networks’ which can apply learnable filters to the images beforehand."
   },
   {
-    "objectID": "posts/a-galaxy-lacking-dark-matter/index.html",
-    "href": "posts/a-galaxy-lacking-dark-matter/index.html",
-    "title": "A galaxy lacking dark matter?",
-    "section": "",
-    "text": "I wrote a short post about the galaxy NGC 1052–DF2, which was the subject of recent work suggesting that it didn’t have any dark matter. You can read it on medium, here"
-  },
-  {
-    "objectID": "hector.html",
-    "href": "hector.html",
-    "title": "The Hector Galaxy Survey",
-    "section": "",
-    "text": "I’ve been very involed in the Hector Galaxy Survey, a $7m dollar Australian Research Council funded project to meausure the properties of 15,000 galaxies in the night sky.\nThe code I’ve written has helped the survey create catalogues of targets to study, group these big catalogues into individual “tiles”, and turn these tiles into the correct files the astronomers at the telescope need to actually carry out our observations.\nYou can find the documentation I’ve written about these steps below:"
-  },
-  {
-    "objectID": "hector.html#general-workflow-tips",
-    "href": "hector.html#general-workflow-tips",
-    "title": "The Hector Galaxy Survey",
-    "section": "General Workflow Tips",
-    "text": "General Workflow Tips\nThe workflow for each step is similar: they all use the woorkflow management tool snakemake. Their directory structures are also follow the same basic structure:\nproject\n└───docs\n└───config\n└───resources\n└───results\n└───workflow\n│   │   Snakefile\n│   └───scripts\nThe docs folder contains the documentation I’ve written for these pipelines. They’re all in markdown files (.md), and are turned into the websites above using the tool MkDocs.\nresources contains input files for this pipeline, i.e. files which the pipeline needs to run but will not change. Files which are created by the pipeline are saved in results. Note that the input to one pipeline is likely to be the output from another! There can also be sub-directories in each of these folders to keep things tidy.\nParameters which are needed during a pipeline run are stored in a config file in the config folder. These config files are always in the YAML format (.yaml, which rhymes with ‘camel’). This is a human-readable format for passing around small pieces of data like numbers and strings. They should be well commented and hopefully fairly easy to understand!\nThe workflow folder contains a folder named scripts, which stores all of the python scripts needed to carry out individual tasks (e.g. selecting galaxies from a catalogue, removing foreground stars, running the distortion correction code, etc). The Snakefile is a series of rules which lays out how each of these scripts work together. The tool snakemake then follows these steps to work out which python scripts it needs to run and in what order.\nAn example snakemake command would be something like:\nsnakemake --cores 1 --config-file config/your_config_file.yaml -- results/path/to/output/file\nThis would tell snakemake to make the file results/path/to/output/file using a single thread (--cores 1) and using the parameters contained in config/your_config_file.yaml.\nA very handy set of options are -npr. If you add these flags at the beginning of the above command, snakemake will print out all the steps it is about to take without actually running them."
-  },
-  {
     "objectID": "old/Pure_blog/LICENSE.html",
     "href": "old/Pure_blog/LICENSE.html",
     "title": "",
     "section": "",
-    "text": "Code\n\n\n\n\nSoftware License Agreement (BSD License)\nCopyright 2013 Yahoo! Inc. All rights reserved.\nRedistribution and use in source and binary forms, with or without modification, are permitted provided that the following conditions are met:\n* Redistributions of source code must retain the above copyright\n  notice, this list of conditions and the following disclaimer.\n\n* Redistributions in binary form must reproduce the above copyright\n  notice, this list of conditions and the following disclaimer in the\n  documentation and/or other materials provided with the distribution.\n\n* Neither the name of the Yahoo! Inc. nor the\n  names of its contributors may be used to endorse or promote products\n  derived from this software without specific prior written permission.\nTHIS SOFTWARE IS PROVIDED BY THE COPYRIGHT HOLDERS AND CONTRIBUTORS “AS IS” AND ANY EXPRESS OR IMPLIED WARRANTIES, INCLUDING, BUT NOT LIMITED TO, THE IMPLIED WARRANTIES OF MERCHANTABILITY AND FITNESS FOR A PARTICULAR PURPOSE ARE DISCLAIMED. IN NO EVENT SHALL YAHOO! INC. BE LIABLE FOR ANY DIRECT, INDIRECT, INCIDENTAL, SPECIAL, EXEMPLARY, OR CONSEQUENTIAL DAMAGES (INCLUDING, BUT NOT LIMITED TO, PROCUREMENT OF SUBSTITUTE GOODS OR SERVICES; LOSS OF USE, DATA, OR PROFITS; OR BUSINESS INTERRUPTION) HOWEVER CAUSED AND ON ANY THEORY OF LIABILITY, WHETHER IN CONTRACT, STRICT LIABILITY, OR TORT (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE."
-  },
-  {
-    "objectID": "about.html",
-    "href": "about.html",
-    "title": "About",
-    "section": "",
-    "text": "I am a postdoctoral researcher in Data Intensive Astronomy at the University of Macquarie."
-  },
-  {
-    "objectID": "about.html#education",
-    "href": "about.html#education",
-    "title": "About",
-    "section": "Education",
-    "text": "Education"
-  },
-  {
-    "objectID": "about.html#research",
-    "href": "about.html#research",
-    "title": "About",
-    "section": "Research",
-    "text": "Research"
+    "text": "Code\n\n\n\n\n\nSoftware License Agreement (BSD License)\nCopyright 2013 Yahoo! Inc. All rights reserved.\nRedistribution and use in source and binary forms, with or without modification, are permitted provided that the following conditions are met:\n* Redistributions of source code must retain the above copyright\n  notice, this list of conditions and the following disclaimer.\n\n* Redistributions in binary form must reproduce the above copyright\n  notice, this list of conditions and the following disclaimer in the\n  documentation and/or other materials provided with the distribution.\n\n* Neither the name of the Yahoo! Inc. nor the\n  names of its contributors may be used to endorse or promote products\n  derived from this software without specific prior written permission.\nTHIS SOFTWARE IS PROVIDED BY THE COPYRIGHT HOLDERS AND CONTRIBUTORS “AS IS” AND ANY EXPRESS OR IMPLIED WARRANTIES, INCLUDING, BUT NOT LIMITED TO, THE IMPLIED WARRANTIES OF MERCHANTABILITY AND FITNESS FOR A PARTICULAR PURPOSE ARE DISCLAIMED. IN NO EVENT SHALL YAHOO! INC. BE LIABLE FOR ANY DIRECT, INDIRECT, INCIDENTAL, SPECIAL, EXEMPLARY, OR CONSEQUENTIAL DAMAGES (INCLUDING, BUT NOT LIMITED TO, PROCUREMENT OF SUBSTITUTE GOODS OR SERVICES; LOSS OF USE, DATA, OR PROFITS; OR BUSINESS INTERRUPTION) HOWEVER CAUSED AND ON ANY THEORY OF LIABILITY, WHETHER IN CONTRACT, STRICT LIABILITY, OR TORT (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE."
   }
 ]
